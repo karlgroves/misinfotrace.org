@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+permalink: /contact/
+title: Contact
+description: Get in touch with Misinfo Trace about collaborating, the methodology, or your data.
+---
+<header class="page-header">
+  <div class="container page-header__inner">
+    <p class="eyebrow">Contact</p>
+    <h1 class="page-title">Get in touch.</h1>
+    <p class="lede">Researchers, technologists, journalists and others interested in collaborating: tell us what you work on and where you'd like to help. Questions about the methodology, or about data you've sent us, are welcome here too.</p>
+  </div>
+</header>
+
+<div class="container">
+  <form class="form" name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company">
+    <input type="hidden" name="form-name" value="contact">
+    <p hidden><label for="contact-company">Leave this field empty</label><input id="contact-company" name="company" tabindex="-1" autocomplete="off"></p>
+    <div class="field">
+      <label class="field-label" for="contact-name">Name</label>
+      <input class="input" id="contact-name" name="name" type="text" autocomplete="name" required>
+    </div>
+    <div class="field">
+      <label class="field-label" for="contact-email">Email address</label>
+      <input class="input" id="contact-email" name="email" type="email" autocomplete="email" required>
+    </div>
+    <div class="field">
+      <label class="field-label" for="contact-role">What you work on <span class="field-optional">(optional)</span></label>
+      <input class="input" id="contact-role" name="role" type="text" autocomplete="organization-title">
+    </div>
+    <div class="field">
+      <label class="field-label" for="contact-message">Message</label>
+      <textarea class="input input--area" id="contact-message" name="message" rows="7" required></textarea>
+    </div>
+    <div class="actions">
+      <button class="button" type="submit">Send message</button>
+    </div>
+    <p class="small-copy">We use what you send only to reply. See our <a href="/privacy/">privacy page</a>.</p>
+  </form>
+</div>

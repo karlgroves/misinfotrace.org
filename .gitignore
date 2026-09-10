@@ -1,0 +1,10 @@
+node_modules/
+_site/
+.DS_Store
+*.log
+.env*
+test-results/
+playwright-report/
+# The assembled design canvas (a 2 MB generated page); its sources are the
+# design/*.dc.html files and design/canvas.json beside it.
+design/misinfo-trace-landing-page.html

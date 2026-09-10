@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&amp;family=Figtree:wght@500;600&amp;display=swap">
+  <style>
+    html, body { margin: 0; background: #fcfcfa; }
+    body { font-family: "Spectral", Georgia, "Times New Roman", serif; color: #1c2321; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
+    p { margin: 0; text-wrap: pretty; }
+    a { color: #1f5c4a; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #1f5c4a; outline-offset: 3px; }
+    sup.n { font-family: "Figtree", "Helvetica Neue", Arial, sans-serif; font-weight: 600; font-size: 0.32em; color: #1f5c4a; vertical-align: super; line-height: 0; padding-left: 0.08em; }
+    .sc { font-variant-caps: all-small-caps; letter-spacing: 0.06em; }
+  </style>
+</helmet>
+<div style="width: 1440px; min-height: 1700px; background: #fcfcfa;">
+  <header style="display: flex; justify-content: space-between; align-items: center; padding: 28px 120px; border-bottom: 1px solid #d6dbd7;">
+    <a href="#top" style="color: #1c2321; text-decoration: none; font-weight: 600; font-size: 26px; letter-spacing: -0.01em;">Misinfo Trace</a>
+    <nav aria-label="Primary" style="display: flex; align-items: center; gap: 28px; font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 15px;">
+      <a href="#about" style="color: #1c2321; text-decoration: none;">About</a>
+      <a href="#how" style="color: #1c2321; text-decoration: none;">Approach</a>
+      <a href="#research" style="color: #1c2321; text-decoration: none;">Research</a>
+      <a href="#involved" style="color: #1c2321; text-decoration: none;">Get Involved</a>
+      <a href="#involved" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: #1f5c4a; color: #ffffff; text-decoration: none; border-radius: 3px; font-weight: 600;">Follow the Research</a>
+    </nav>
+  </header>
+
+  <section aria-labelledby="a-hero" style="display: grid; grid-template-columns: minmax(0, 700px) 300px; gap: 88px; padding: 112px 120px 96px;">
+    <div style="display: flex; flex-direction: column; gap: 30px;">
+      <p class="sc" style="font-size: 19px; color: #58615d;">An open research project</p>
+      <h1 id="a-hero" style="font-size: 64px; line-height: 1.1; letter-spacing: -0.012em;">Misinformation is a system.<sup class="n">1</sup> <em>We're studying how it works.</em></h1>
+      <p style="font-size: 22px; line-height: 1.6; color: #2f3834;">Misinfo Trace detects factual narratives as they emerge, examines the evidence around them, and studies how misinformation originates and spreads — holding every claim to the same standard,<sup class="n" style="font-size: 0.6em;">2</sup> whichever side it favors.</p>
+      <div style="display: flex; align-items: center; gap: 28px; padding-top: 8px; font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px;">
+        <a href="#building" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; background: #1f5c4a; color: #ffffff; text-decoration: none; border-radius: 3px;">Explore the Project</a>
+        <a href="#how">See Our Approach</a>
+      </div>
+    </div>
+    <aside aria-label="Notes" style="display: flex; flex-direction: column; gap: 28px; padding-top: 58px; font-size: 16px; line-height: 1.55; color: #58615d;">
+      <p style="border-left: 1px solid #d6dbd7; padding-left: 20px;"><span style="font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; color: #1f5c4a;">1</span>&#160; A claim starts somewhere, moves through posts, articles and reposts, and joins a larger narrative. <a href="#about">The problem</a></p>
+      <p style="border-left: 1px solid #d6dbd7; padding-left: 20px;"><span style="font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; color: #1f5c4a;">2</span>&#160; Tested, not assumed: mirrored pairs of claims run through the same method and are checked for equal treatment. <a href="#standard">Same standard</a></p>
+      <p style="border-left: 1px solid #1f5c4a; padding-left: 20px;"><span class="sc" style="color: #1c2321;">Status</span>&#160; Early-stage research. Parts of the method are being tested; none of this is a finished tool yet.</p>
+    </aside>
+  </section>
+
+  <div style="margin: 0 120px; border-top: 1px solid #d6dbd7;"></div>
+
+  <section id="standard" aria-labelledby="a-standard" style="display: grid; grid-template-columns: minmax(0, 700px) 300px; gap: 88px; padding: 96px 120px 120px;">
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <p class="sc" style="font-size: 18px; color: #58615d;">Same standard, regardless of side</p>
+      <h2 id="a-standard" style="font-size: 48px; line-height: 1.12; letter-spacing: -0.01em;">Same claim. Same evidence. <em>Same standard.</em></h2>
+      <p style="font-size: 20px; line-height: 1.6; color: #2f3834;">Our goal is to filter, classify and assess every claim by the same public-interest, classification and evidentiary rules — whichever side its political or ideological implications favor.</p>
+      <table style="margin-top: 16px; width: 100%; border-collapse: collapse; font-size: 18px; line-height: 1.5;">
+        <tbody>
+          <tr>
+            <th scope="row" style="width: 120px; text-align: left; vertical-align: top; padding: 16px 16px 16px 0; border-top: 1px solid #1c2321; font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 15px;">Position A</th>
+            <td style="width: 220px; vertical-align: top; padding: 16px 16px 16px 0; border-top: 1px solid #1c2321; font-style: italic;">a claim favoring one side</td>
+            <td style="vertical-align: top; padding: 16px 0; border-top: 1px solid #1c2321;">same scope rules, classification and evidentiary standard</td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align: left; vertical-align: top; padding: 16px 16px 16px 0; border-top: 1px solid #d6dbd7; font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 15px;">Position B</th>
+            <td style="vertical-align: top; padding: 16px 16px 16px 0; border-top: 1px solid #d6dbd7; font-style: italic;">the mirrored claim, favoring the other</td>
+            <td style="vertical-align: top; padding: 16px 0; border-top: 1px solid #d6dbd7;">same scope rules, classification and evidentiary standard</td>
+          </tr>
+          <tr>
+            <th scope="row" style="text-align: left; vertical-align: top; padding: 16px 16px 16px 0; border-top: 1px solid #1c2321; border-bottom: 1px solid #1c2321; font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 15px; color: #1f5c4a;">Result</th>
+            <td colspan="2" style="vertical-align: top; padding: 16px 0; border-top: 1px solid #1c2321; border-bottom: 1px solid #1c2321;">An evidence-based assessment: supported, contradicted, disputed — or unknown.<sup class="n" style="font-size: 0.6em;">3</sup></td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="#research" style="align-self: flex-start; margin-top: 8px; font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px;">See how we're testing for bias</a>
+    </div>
+    <aside aria-label="Notes" style="display: flex; flex-direction: column; gap: 28px; padding-top: 300px; font-size: 16px; line-height: 1.55; color: #58615d;">
+      <p style="border-left: 1px solid #d6dbd7; padding-left: 20px;"><span style="font-family: 'Figtree', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; color: #1f5c4a;">3</span>&#160; Unknown is a valid outcome. The method never forces a true-or-false answer the evidence can't support.</p>
+    </aside>
+  </section>
+</div>
+</x-dc>
+</body>
+</html>

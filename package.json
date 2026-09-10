@@ -1,0 +1,38 @@
+{
+  "name": "misinfo-trace-landing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public landing site for Misinfo Trace, an open research project on how misinformation originates and spreads.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "clean": "node -e \"import('node:fs').then((fs) => fs.rmSync('_site', { recursive: true, force: true }))\"",
+    "prebuild": "npm run clean",
+    "build": "eleventy",
+    "prestart": "npm run clean",
+    "start": "eleventy --serve",
+    "serve": "node scripts/serve.mjs",
+    "lint:md": "markdownlint-cli2",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "check:site": "node scripts/check-site.mjs",
+    "check:launch": "node scripts/check-site.mjs --launch",
+    "pretest:e2e": "npm run build",
+    "test:e2e": "playwright test",
+    "og": "node scripts/og-image.mjs",
+    "check": "npm run lint:md && npm run check:contrast && npm run test:e2e && npm run check:site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6",
+    "@afixt/a11y-assert": "3.0.0",
+    "@fontsource/newsreader": "5.3.0",
+    "@fontsource/public-sans": "5.3.0",
+    "@playwright/test": "1.62.1",
+    "markdownlint-cli2": "0.23.2"
+  },
+  "overrides": {
+    "smol-toml": "^1.8.0"
+  }
+}

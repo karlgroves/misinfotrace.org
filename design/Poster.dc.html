@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;800&amp;family=Literata:opsz,wght@7..72,400&amp;display=swap">
+  <style>
+    html, body { margin: 0; background: #fbfbf9; }
+    body { font-family: "Literata", Georgia, serif; color: #111413; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { margin: 0; font-family: "Epilogue", "Helvetica Neue", Arial, sans-serif; font-weight: 800; text-wrap: balance; }
+    p { margin: 0; text-wrap: pretty; }
+    a { color: #111413; text-decoration-color: #e3a92b; text-decoration-thickness: 3px; text-underline-offset: 5px; }
+    a:hover { text-decoration-color: currentColor; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #e3a92b; outline-offset: 3px; }
+  </style>
+</helmet>
+<div style="width: 1440px; min-height: 2000px; background: #fbfbf9;">
+  <header style="display: flex; justify-content: space-between; align-items: center; padding: 22px 64px;">
+    <a href="#top" style="text-decoration: none; font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 23px;">Misinfo Trace</a>
+    <nav aria-label="Primary" style="display: flex; align-items: center; gap: 30px; font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 15px;">
+      <a href="#about" style="text-decoration: none;">About</a>
+      <a href="#how" style="text-decoration: none;">Approach</a>
+      <a href="#research" style="text-decoration: none;">Research</a>
+      <a href="#involved" style="text-decoration: none;">Get Involved</a>
+      <a href="#involved" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; background: #111413; color: #fbfbf9; text-decoration: none;">Follow the Research</a>
+    </nav>
+  </header>
+
+  <section aria-labelledby="p-hero" style="background: #0e6b64; color: #ffffff; padding: 112px 64px 96px; display: flex; flex-direction: column; gap: 32px;">
+    <p style="font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 16px; color: #c4e6e0;">An open research project</p>
+    <h1 id="p-hero" style="max-width: 1120px; font-size: 92px; line-height: 1.0; letter-spacing: -0.01em;">Misinformation is a system. We're studying how it works.</h1>
+    <p style="max-width: 36em; font-size: 22px; line-height: 1.55; color: #e4f2ef;">Misinfo Trace detects factual narratives as they emerge, examines the evidence around them, and studies how misinformation originates and spreads — holding every claim to the same standard, whichever side it favors.</p>
+    <div style="display: flex; align-items: center; gap: 32px; padding-top: 8px;">
+      <a href="#building" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 28px; background: #e3a92b; color: #111413; text-decoration: none; font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 18px;">Explore the Project</a>
+      <a href="#how" style="color: #ffffff; font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 18px;">See Our Approach</a>
+    </div>
+  </section>
+
+  <section aria-label="How a claim travels" style="background: #e3a92b; padding: 36px 64px 44px; display: flex; flex-direction: column; gap: 14px;">
+    <p style="font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 16px;">How a claim travels</p>
+    <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 46px; line-height: 1;">
+      <li>Claim</li>
+      <li aria-hidden="true"><svg width="44" height="18" viewBox="0 0 44 18"><path d="M0 9 H40 M32 2 L40 9 L32 16" fill="none" stroke="#111413" stroke-width="3"></path></svg></li>
+      <li>Source</li>
+      <li aria-hidden="true"><svg width="44" height="18" viewBox="0 0 44 18"><path d="M0 9 H40 M32 2 L40 9 L32 16" fill="none" stroke="#111413" stroke-width="3"></path></svg></li>
+      <li>Amplification</li>
+      <li aria-hidden="true"><svg width="44" height="18" viewBox="0 0 44 18"><path d="M0 9 H40 M32 2 L40 9 L32 16" fill="none" stroke="#111413" stroke-width="3"></path></svg></li>
+      <li>Network</li>
+      <li aria-hidden="true"><svg width="44" height="18" viewBox="0 0 44 18"><path d="M0 9 H40 M32 2 L40 9 L32 16" fill="none" stroke="#111413" stroke-width="3"></path></svg></li>
+      <li>Audience</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="p-standard" style="padding: 120px 64px; display: flex; flex-direction: column; gap: 24px;">
+    <h2 id="p-standard" style="max-width: 900px; font-size: 64px; line-height: 1.02;">Same claim. Same evidence. Same standard.</h2>
+    <p style="max-width: 34em; font-size: 20px; line-height: 1.6; color: #2c3230;">Our goal is to filter, classify and assess every claim by the same rules, whichever side its political or ideological implications favor — and to test that we do.</p>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 32px;">
+      <div style="background: #0e6b64; color: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 10px;">
+        <h3 style="font-size: 32px;">Position A</h3>
+        <p style="font-size: 18px; color: #e4f2ef;">A claim favoring one side</p>
+        <ul style="list-style: none; margin: 16px 0 0; padding: 0; font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px;">
+          <li style="padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.35);">Same scope rules</li>
+          <li style="padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.35);">Same classification</li>
+          <li style="padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.35);">Same evidentiary standard</li>
+        </ul>
+      </div>
+      <div style="background: #0e6b64; color: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 10px;">
+        <h3 style="font-size: 32px;">Position B</h3>
+        <p style="font-size: 18px; color: #e4f2ef;">The mirrored claim, favoring the other</p>
+        <ul style="list-style: none; margin: 16px 0 0; padding: 0; font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px;">
+          <li style="padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.35);">Same scope rules</li>
+          <li style="padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.35);">Same classification</li>
+          <li style="padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.35);">Same evidentiary standard</li>
+        </ul>
+      </div>
+    </div>
+    <div style="background: #111413; color: #fbfbf9; padding: 36px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <h3 style="font-size: 34px;">Evidence-based assessment</h3>
+        <p style="font-size: 17px; color: #c8cdcb;">“Unknown” is a valid outcome.</p>
+      </div>
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 15px;">
+        <li style="border: 2px solid #e3a92b; padding: 6px 12px;">Supported</li>
+        <li style="border: 2px solid #e3a92b; padding: 6px 12px;">Contradicted</li>
+        <li style="border: 2px solid #e3a92b; padding: 6px 12px;">Disputed</li>
+        <li style="background: #e3a92b; color: #111413; border: 2px solid #e3a92b; padding: 6px 12px;">Unknown</li>
+      </ul>
+    </div>
+    <a href="#research" style="align-self: flex-start; margin-top: 8px; font-family: 'Epilogue', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; font-size: 19px;">See how we're testing for bias</a>
+  </section>
+</div>
+</x-dc>
+</body>
+</html>

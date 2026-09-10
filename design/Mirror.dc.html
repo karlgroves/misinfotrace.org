@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..800&amp;family=Public+Sans:wght@400;600&amp;display=swap">
+  <style>
+    html, body { margin: 0; background: #e6e6e3; }
+    body { font-family: "Public Sans", "Helvetica Neue", Arial, sans-serif; color: #202428; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { margin: 0; font-family: "Archivo", "Arial Narrow", Arial, sans-serif; font-stretch: 115%; font-weight: 700; text-wrap: balance; }
+    p { margin: 0; text-wrap: pretty; }
+    a { color: #202428; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+    a:hover { text-decoration-thickness: 3px; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #202428; outline-offset: 3px; }
+  </style>
+</helmet>
+<div style="position: relative; width: 1440px; min-height: 1800px; background: linear-gradient(90deg, #ebe6de 0, #ebe6de 50%, #dfe5e8 50%, #dfe5e8 100%);">
+  <div aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 719px; width: 2px; background: #202428;"></div>
+
+  <header style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; padding: 28px 64px;">
+    <nav aria-label="Primary, left" style="display: flex; gap: 28px; font-weight: 600; font-size: 15px;">
+      <a href="#about" style="text-decoration: none;">About</a>
+      <a href="#how" style="text-decoration: none;">Approach</a>
+    </nav>
+    <a href="#top" style="background: #202428; color: #f8f8f6; text-decoration: none; padding: 10px 20px; font-family: 'Archivo', 'Arial Narrow', Arial, sans-serif; font-stretch: 115%; font-weight: 700; font-size: 19px;">Misinfo Trace</a>
+    <nav aria-label="Primary, right" style="display: flex; justify-content: flex-end; align-items: center; gap: 28px; font-weight: 600; font-size: 15px;">
+      <a href="#research" style="text-decoration: none;">Research</a>
+      <a href="#involved" style="text-decoration: none;">Get Involved</a>
+      <a href="#involved" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1.5px solid #202428; text-decoration: none;">Follow the Research</a>
+    </nav>
+  </header>
+
+  <section aria-labelledby="m-hero" style="position: relative; padding: 112px 0 0; display: flex; flex-direction: column; align-items: center; gap: 36px;">
+    <p style="background: #f8f8f6; border: 1.5px solid #202428; padding: 6px 16px; font-weight: 600; font-size: 14px; letter-spacing: 0.02em;">An open research project</p>
+    <h1 id="m-hero" style="width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: 68px; line-height: 1.04;">
+      <span style="text-align: right; padding-right: 48px;">Misinformation<br>is a system.</span>
+      <span style="text-align: left; padding-left: 48px;">We're studying<br>how it works.</span>
+    </h1>
+    <div style="width: 680px; box-sizing: border-box; margin-top: 36px; background: #f8f8f6; border: 1.5px solid #202428; padding: 36px 44px; display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center;">
+      <p style="font-size: 20px; line-height: 1.6;">Misinfo Trace detects factual narratives as they emerge, examines the evidence around them, and studies how misinformation originates and spreads — holding every claim to the same standard, whichever side it favors.</p>
+      <div style="display: flex; align-items: center; gap: 28px;">
+        <a href="#building" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; background: #202428; color: #f8f8f6; text-decoration: none; font-weight: 600; font-size: 17px;">Explore the Project</a>
+        <a href="#how" style="font-weight: 600; font-size: 17px;">See Our Approach</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="m-standard" style="position: relative; padding: 160px 0 96px; display: flex; flex-direction: column; align-items: center;">
+    <div style="width: 100%; background: #f8f8f6; border-top: 1.5px solid #202428; border-bottom: 1.5px solid #202428; padding: 40px 64px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; box-sizing: border-box;">
+      <p style="font-weight: 600; font-size: 14px; letter-spacing: 0.02em; color: #4b5157;">Same standard, regardless of side</p>
+      <h2 id="m-standard" style="font-size: 52px; line-height: 1.08;">Same claim. Same evidence. Same standard.</h2>
+    </div>
+
+    <div style="width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 64px;">
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 18px; text-align: right;">
+        <div style="padding-right: 48px; display: flex; flex-direction: column; gap: 6px;">
+          <h3 style="font-size: 30px;">Position A</h3>
+          <p style="font-size: 18px; color: #4b5157;">A claim favoring one side</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; font-size: 18px;"><span>Same scope rules</span><span aria-hidden="true" style="width: 48px; height: 1.5px; background: #202428;"></span></div>
+        <div style="display: flex; align-items: center; gap: 16px; font-size: 18px;"><span>Same classification</span><span aria-hidden="true" style="width: 48px; height: 1.5px; background: #202428;"></span></div>
+        <div style="display: flex; align-items: center; gap: 16px; font-size: 18px;"><span>Same evidentiary standard</span><span aria-hidden="true" style="width: 48px; height: 1.5px; background: #202428;"></span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 18px; text-align: left;">
+        <div style="padding-left: 48px; display: flex; flex-direction: column; gap: 6px;">
+          <h3 style="font-size: 30px;">Position B</h3>
+          <p style="font-size: 18px; color: #4b5157;">The mirrored claim, favoring the other</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; font-size: 18px;"><span aria-hidden="true" style="width: 48px; height: 1.5px; background: #202428;"></span><span>Same scope rules</span></div>
+        <div style="display: flex; align-items: center; gap: 16px; font-size: 18px;"><span aria-hidden="true" style="width: 48px; height: 1.5px; background: #202428;"></span><span>Same classification</span></div>
+        <div style="display: flex; align-items: center; gap: 16px; font-size: 18px;"><span aria-hidden="true" style="width: 48px; height: 1.5px; background: #202428;"></span><span>Same evidentiary standard</span></div>
+      </div>
+    </div>
+
+    <div style="position: relative; margin-top: 64px; width: 560px; box-sizing: border-box; background: #202428; color: #f8f8f6; padding: 32px 40px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;">
+      <h3 style="font-size: 26px;">Evidence-based assessment</h3>
+      <p style="font-weight: 600; font-size: 16px; letter-spacing: 0.02em;">Supported · Contradicted · Disputed · Unknown</p>
+      <p style="font-size: 16px; color: #c9ced2;">“Unknown” is a valid outcome.</p>
+    </div>
+    <a href="#research" style="position: relative; margin-top: 32px; background: #f8f8f6; padding: 4px 10px; font-weight: 600; font-size: 17px;">See how we're testing for bias</a>
+  </section>
+</div>
+</x-dc>
+</body>
+</html>

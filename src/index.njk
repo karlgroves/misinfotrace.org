@@ -1,0 +1,369 @@
+---
+layout: layouts/base.njk
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__inner">
+    <div class="hero__heading">
+      <p class="eyebrow">An open research project</p>
+      <h1 id="hero-title" class="hero__title">Misinformation is a system. We're studying how it works.</h1>
+    </div>
+    <div class="hero__body">
+      <div class="hero__copy">
+        <p class="lede">Misinfo Trace detects factual narratives as they emerge, examines the evidence around them, and studies how misinformation originates and spreads — holding every claim to the same standard, whichever side it favors.</p>
+        <div class="actions">
+          <a class="button" href="#building">Explore the Project</a>
+          <a class="link-strong" href="#how">See Our Approach <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <figure class="hero__figure">
+          <svg class="diagram" viewBox="0 0 660 336" role="img" aria-label="Illustrative example: four differently worded posts about a 14 percent inflation rate converge into one claim, which three amplifiers carry to a wider audience.">
+            <g class="dg-label" font-size="11.5" letter-spacing="1.2" fill="#535956">
+              <text x="0" y="12">VARIANTS</text>
+              <text x="400" y="12" text-anchor="middle">CLAIM</text>
+              <text x="500" y="12" text-anchor="middle">AMPLIFIED</text>
+              <text x="608" y="12" text-anchor="middle">AUDIENCE</text>
+            </g>
+            <g stroke="#1a1d1c" stroke-width="1.25" fill="none">
+              <path d="M320 57 C352 57, 352 173, 374 173"/>
+              <path d="M320 133 C350 133, 350 173, 374 173"/>
+              <path d="M320 209 C350 209, 350 173, 374 173"/>
+              <path d="M320 285 C352 285, 352 173, 374 173"/>
+              <path d="M426 173 L491 108 M426 173 L491 173 M426 173 L491 238"/>
+            </g>
+            <g stroke="#535956" stroke-width="0.8" fill="none">
+              <path d="M505 108 L578 86 M505 108 L604 102 M505 108 L584 124 M505 108 L634 94"/>
+              <path d="M505 173 L588 158 M505 173 L622 174 M505 173 L584 190 M505 173 L646 164"/>
+              <path d="M505 238 L580 224 M505 238 L614 242 M505 238 L590 260 M505 238 L640 232"/>
+            </g>
+            <g fill="#1a1d1c">
+              <circle cx="578" cy="86" r="3.5"/><circle cx="604" cy="102" r="3.5"/><circle cx="584" cy="124" r="3.5"/><circle cx="634" cy="94" r="3.5"/>
+              <circle cx="588" cy="158" r="3.5"/><circle cx="622" cy="174" r="3.5"/><circle cx="584" cy="190" r="3.5"/><circle cx="646" cy="164" r="3.5"/>
+              <circle cx="580" cy="224" r="3.5"/><circle cx="614" cy="242" r="3.5"/><circle cx="590" cy="260" r="3.5"/><circle cx="640" cy="232" r="3.5"/>
+            </g>
+            <g fill="#f2f3ef" stroke="#1a1d1c" stroke-width="1.5">
+              <circle cx="498" cy="108" r="8"/><circle cx="498" cy="173" r="8"/><circle cx="498" cy="238" r="8"/>
+            </g>
+            <circle cx="400" cy="173" r="26" fill="#f4df4e" stroke="#1a1d1c" stroke-width="1.5"/>
+            <text class="dg-label" x="400" y="220" text-anchor="middle" font-size="11.5" fill="#535956">4 wordings</text>
+            <g class="dg-slips">
+              <rect x="0" y="26" width="320" height="62" fill="#fbfbf8" stroke="#cdd1cc"/>
+              <text class="dg-label" x="14" y="47" font-size="11.5" fill="#535956">POST · seen 09:14 UTC</text>
+              <text class="dg-quote" x="14" y="72" font-size="13.5" fill="#1a1d1c">“Inflation is running at 14%.”</text>
+              <rect x="0" y="102" width="320" height="62" fill="#fbfbf8" stroke="#cdd1cc"/>
+              <text class="dg-label" x="14" y="123" font-size="11.5" fill="#535956">POST · seen 09:31 UTC</text>
+              <text class="dg-quote" x="14" y="148" font-size="13.5" fill="#1a1d1c">“Prices are rising fourteen percent right now.”</text>
+              <rect x="0" y="178" width="320" height="62" fill="#fbfbf8" stroke="#cdd1cc"/>
+              <text class="dg-label" x="14" y="199" font-size="11.5" fill="#535956">ARTICLE · seen 10:02 UTC</text>
+              <text class="dg-quote" x="14" y="224" font-size="13.5" fill="#1a1d1c">“Current inflation is 14 percent.”</text>
+              <rect x="0" y="254" width="320" height="62" fill="#fbfbf8" stroke="#cdd1cc"/>
+              <text class="dg-label" x="14" y="275" font-size="11.5" fill="#535956">REPLY · seen 10:47 UTC</text>
+              <text class="dg-quote" x="14" y="300" font-size="13.5" fill="#1a1d1c">“The government is hiding a 14% inflation rate.”</text>
+            </g>
+          </svg>
+        <figcaption class="figure-caption">
+          <span class="tag">Illustrative example</span>
+          <span>Not research data. Four wordings of one claim, recognized as the same narrative before it spreads.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section" aria-labelledby="problem-title">
+  <div class="container section__inner">
+    <div class="split">
+      <div class="section-head">
+        <p class="eyebrow">The problem</p>
+        <h2 id="problem-title" class="section-title">False claims don't travel alone.</h2>
+      </div>
+      <div class="body-copy">
+        <p>Misinformation is usually treated as a string of isolated false statements, each checked on its own. In practice a claim starts somewhere, moves through posts, articles and reposts, gets picked up by recurring sources and amplifiers, and becomes part of a larger narrative.</p>
+        <p>Studying it as a system means following that whole path — not just ruling on the last sentence someone happened to read.</p>
+      </div>
+    </div>
+
+    <ol class="chain" aria-label="How a claim spreads">
+      <li>CLAIM</li>
+      <li class="chain__arrow" aria-hidden="true">→</li>
+      <li>SOURCE</li>
+      <li class="chain__arrow" aria-hidden="true">→</li>
+      <li>AMPLIFICATION</li>
+      <li class="chain__arrow" aria-hidden="true">→</li>
+      <li>NETWORK</li>
+      <li class="chain__arrow" aria-hidden="true">→</li>
+      <li>IMPACT</li>
+    </ol>
+
+    <div class="kinds">
+      <div class="kind">
+        <svg width="120" height="32" viewBox="0 0 120 32" aria-hidden="true" focusable="false"><path d="M0 28 L58 27 L78 25 L94 18 L107 9 L120 2" fill="none" stroke="#1a1d1c" stroke-width="1.8"/><line x1="0" y1="31" x2="120" y2="31" stroke="#cdd1cc"/></svg>
+        <h3 class="kind__title">Emerging</h3>
+        <p class="small-copy">A factual narrative beginning to spread before evidence or correction has caught up with it.</p>
+      </div>
+      <div class="kind">
+        <svg width="120" height="32" viewBox="0 0 120 32" aria-hidden="true" focusable="false"><path d="M0 27 L12 27 L18 10 L24 27 L42 27 L48 13 L54 27 L74 27 L80 8 L86 27 L104 27 L110 14 L116 27 L120 27" fill="none" stroke="#1a1d1c" stroke-width="1.8"/><line x1="0" y1="31" x2="120" y2="31" stroke="#cdd1cc"/></svg>
+        <h3 class="kind__title">Persistent</h3>
+        <p class="small-copy">A narrative already checked or corrected that keeps resurfacing and reaching new audiences.</p>
+      </div>
+      <div class="kind">
+        <svg width="120" height="32" viewBox="0 0 120 32" aria-hidden="true" focusable="false"><rect x="52" y="0" width="22" height="31" fill="#f4df4e"/><path d="M0 28 L20 24 L38 20 L54 12 L63 17 L72 21 L82 12 L100 8 L120 3" fill="none" stroke="#1a1d1c" stroke-width="1.8"/><line x1="0" y1="31" x2="120" y2="31" stroke="#cdd1cc"/></svg>
+        <h3 class="kind__title">Context-distorting</h3>
+        <p class="small-copy">A statement that may be accurate, but misleads because important context is left out — like a short window that hides the long-term trend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="building" class="section" aria-labelledby="building-title">
+  <div class="container section__inner">
+    <div class="section-head">
+      <p class="eyebrow">What we're building</p>
+      <h2 id="building-title" class="section-title">Identify. Investigate. Trace.</h2>
+      <p class="note-tag">Research direction — not all of this exists yet</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <h3 class="pillar__title">Identify</h3>
+        <p class="small-copy">Detect factual claims and narratives worth investigating — including the same claim in different words — before judging whether they are true.</p>
+      </div>
+      <div class="pillar">
+        <h3 class="pillar__title">Investigate</h3>
+        <p class="small-copy">Determine what available evidence supports or contradicts those claims.</p>
+      </div>
+      <div class="pillar">
+        <h3 class="pillar__title">Trace</h3>
+        <p class="small-copy">Study where misinformation originates, how it spreads, and whether recurring patterns emerge.</p>
+      </div>
+    </div>
+
+    <div class="split split--compare">
+      <div class="compare-intro">
+        <h3 class="pillar__title">How this differs from fact-checking</h3>
+        <p class="small-copy">Fact-checking is essential work, and it usually begins once a claim is already circulating widely. We are researching whether narratives can be found earlier and routed to human verification sooner.</p>
+        <p class="pull">Detection comes before judgment.</p>
+      </div>
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <td></td>
+              <th scope="col">Conventional fact-checking</th>
+              <th scope="col" class="compare__ours">What Misinfo Trace aims to do</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Starts with</th>
+              <td class="compare__theirs">A claim someone has chosen to check</td>
+              <td>Narratives detected as they emerge</td>
+            </tr>
+            <tr>
+              <th scope="row">Timing</th>
+              <td class="compare__theirs">Often after the claim has spread widely</td>
+              <td>While the narrative is still emerging</td>
+            </tr>
+            <tr>
+              <th scope="row">Wording</th>
+              <td class="compare__theirs">One phrasing of the claim</td>
+              <td>The same claim, however it is worded</td>
+            </tr>
+            <tr>
+              <th scope="row">Afterwards</th>
+              <td class="compare__theirs">The check is published</td>
+              <td>Watch for debunked narratives resurfacing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section section--band" aria-labelledby="how-title">
+  <div class="container section__inner section__inner--split">
+    <div class="section-head section-head--aside">
+      <p class="eyebrow">How it works</p>
+      <h2 id="how-title" class="section-title">From first sighting to published method.</h2>
+      <p class="small-copy">Seven steps, in order. Each is designed to leave a record someone else can check.</p>
+      <p class="note-tag">Research direction — not all of this exists yet</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <div class="step__rail"><span class="step__num">1</span><span class="step__line"></span></div>
+        <div class="step__body"><h3 class="step__name">Observe</h3><p class="step__text">Collect public posts and published articles from open sources, recording when each was published and when we saw it.</p></div>
+      </li>
+      <li class="step">
+        <div class="step__rail"><span class="step__num">2</span><span class="step__line"></span></div>
+        <div class="step__body"><h3 class="step__name">Classify</h3><p class="step__text">Keep public-interest factual claims and record what kind of statement each is — directly verifiable, contested, interpretive, normative — without judging whether it is true.</p></div>
+      </li>
+      <li class="step">
+        <div class="step__rail"><span class="step__num">3</span><span class="step__line"></span></div>
+        <div class="step__body"><h3 class="step__name">Investigate</h3><p class="step__text">Gather the evidence that supports or contradicts the claim, from sources anyone can inspect.</p></div>
+      </li>
+      <li class="step">
+        <div class="step__rail"><span class="step__num">4</span><span class="step__line"></span></div>
+        <div class="step__body">
+          <h3 class="step__name">Evaluate</h3>
+          <div class="step__text">
+            <p>Produce a structured assessment with the evidence and confidence behind it. No single AI model decides whether a claim is true, and consequential conclusions are human-reviewable.</p>
+            <ul class="outcomes" aria-label="Possible outcomes">
+              <li>Supported</li>
+              <li>Contradicted</li>
+              <li>Disputed</li>
+              <li>Insufficient evidence</li>
+              <li>Unknown</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step__rail"><span class="step__num">5</span><span class="step__line"></span></div>
+        <div class="step__body"><h3 class="step__name">Trace</h3><p class="step__text">Follow how the claim and its rewordings spread over time and across sources.</p></div>
+      </li>
+      <li class="step">
+        <div class="step__rail"><span class="step__num">6</span><span class="step__line"></span></div>
+        <div class="step__body"><h3 class="step__name">Connect</h3><p class="step__text">Link related claims into larger narratives, and notice when an old narrative resurfaces.</p></div>
+      </li>
+      <li class="step">
+        <div class="step__rail"><span class="step__num">7</span></div>
+        <div class="step__body step__body--last"><h3 class="step__name">Publish</h3><p class="step__text">Release methods, evidence and corrections so others can check the work.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="standard" class="section" aria-labelledby="standard-title">
+  <div class="container section__inner">
+    <div class="split split--end">
+      <div class="section-head">
+        <p class="eyebrow">Same standard, regardless of side</p>
+        <h2 id="standard-title" class="section-title section-title--large">Same claim. Same evidence. Same standard.</h2>
+      </div>
+      <div class="body-copy body-copy--narrow">
+        <p>Our goal is to filter, classify and assess every claim by the same public-interest, classification and evidentiary rules — whichever side its political or ideological implications favor.</p>
+        <p>We don't just assert that. We test it, by running mirrored pairs of claims through the method and checking that they're treated alike.</p>
+      </div>
+    </div>
+
+    <div class="mirror">
+      <div class="mirror__paths">
+        <div class="mirror__path">
+          <div class="mirror__position"><span class="mirror__label">Position A</span><span class="mirror__claim">A claim favoring one side</span></div>
+          <span class="mirror__arrow" aria-hidden="true">→</span>
+          <div class="mirror__method"><span class="mirror__method-title">Same methodology</span><span class="mirror__method-list">scope rules · classification · evidentiary standard</span></div>
+        </div>
+        <div class="mirror__path">
+          <div class="mirror__position"><span class="mirror__label">Position B</span><span class="mirror__claim">The mirrored claim, favoring the other</span></div>
+          <span class="mirror__arrow" aria-hidden="true">→</span>
+          <div class="mirror__method"><span class="mirror__method-title">Same methodology</span><span class="mirror__method-list">scope rules · classification · evidentiary standard</span></div>
+        </div>
+      </div>
+      <svg class="mirror__join" aria-hidden="true" focusable="false" viewBox="0 0 40 200" preserveAspectRatio="none"><path d="M0 50 C24 50, 16 100, 40 100 M0 150 C24 150, 16 100, 40 100" fill="none" stroke="#1a1d1c" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <span class="mirror__arrow mirror__arrow--down" aria-hidden="true">↓</span>
+      <div class="mirror__assess">
+        <span class="mirror__assess-title">Evidence-based assessment</span>
+        <ul class="outcomes" aria-label="Possible outcomes">
+          <li>Supported</li>
+          <li>Contradicted</li>
+          <li>Disputed</li>
+          <li>Unknown</li>
+        </ul>
+        <span class="mirror__note">“Unknown” is a valid outcome.</span>
+      </div>
+    </div>
+
+    <a class="link-strong link-strong--large" href="/methodology/#bias-testing">See how we're testing for bias <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="principles-title">
+  <div class="container section__inner">
+    <div class="section-head">
+      <p class="eyebrow">Research principles</p>
+      <h2 id="principles-title" class="section-title">What we hold ourselves to.</h2>
+    </div>
+    <ul class="principles">
+      <li><span class="principles__word">Evidence</span><span class="principles__over">over authority</span></li>
+      <li><span class="principles__word">Transparency</span><span class="principles__over">over trust</span></li>
+      <li><span class="principles__word">Consistency</span><span class="principles__over">over ideology</span></li>
+      <li><span class="principles__word">Uncertainty</span><span class="principles__over">over false certainty</span></li>
+      <li><span class="principles__word">Correction</span><span class="principles__over">over defensiveness</span></li>
+      <li><span class="principles__word">Investigation</span><span class="principles__over">over accusation</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--band" aria-labelledby="not-title">
+  <div class="container section__inner section__inner--split">
+    <div class="section-head section-head--aside">
+      <p class="eyebrow">What this project is not</p>
+      <h2 id="not-title" class="section-title">The concerns you should have. Our answers.</h2>
+    </div>
+    <dl class="concerns">
+      <div><dt>Not a system for policing opinions.</dt><dd>It evaluates factual claims.</dd></div>
+      <div><dt>Not a partisan fact-checking project.</dt><dd>The same methodology applies regardless of viewpoint.</dd></div>
+      <div><dt>Not an automated truth machine.</dt><dd>No single AI model decides whether a claim is true. Consequential conclusions are human-reviewable.</dd></div>
+      <div><dt>Not an authority asking you to accept its conclusions.</dt><dd>Evidence and methodology are meant to be inspectable.</dd></div>
+      <div><dt>Not a system for labeling someone a bad actor because they were wrong.</dt><dd>Intent and coordination require additional evidence.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="research" class="section" aria-labelledby="research-title">
+  <div class="container section__inner">
+    <div class="split split--end">
+      <div class="section-head">
+        <p class="eyebrow">Current research</p>
+        <h2 id="research-title" class="section-title">Where the work stands.</h2>
+        <p class="small-copy">Each area is labeled by how far it has actually come. Planned means planned.</p>
+      </div>
+      <ul class="status-key" aria-label="Status key">
+        <li><span class="status status--researching">Researching</span><span>Under active study</span></li>
+        <li><span class="status status--testing">Testing</span><span>Method built, being tested</span></li>
+        <li><span class="status status--planned">Planned</span><span>On the roadmap; no results yet</span></li>
+      </ul>
+    </div>
+
+    <ul class="cards">
+      <li class="card"><span class="status status--researching">Researching</span><h3 class="card__title">Early Warning</h3><p class="card__text">Testing whether emerging factual narratives can be detected before they are widely recognized, including the same claim in different words.</p></li>
+      <li class="card"><span class="status status--testing">Testing</span><h3 class="card__title">Defining the Boundary</h3><p class="card__text">Determining which kinds of content should qualify for misinformation analysis.</p></li>
+      <li class="card"><span class="status status--testing">Testing</span><h3 class="card__title">Testing for Bias</h3><p class="card__text">Testing whether opposed claims receive equivalent treatment under the methodology.</p></li>
+      <li class="card card--planned"><span class="status status--planned">Planned</span><h3 class="card__title">Persistent Narratives</h3><p class="card__text">Finding already-debunked narratives that keep resurfacing, and tracing where they reappear.</p></li>
+      <li class="card card--planned"><span class="status status--planned">Planned</span><h3 class="card__title">Evaluating Claims</h3><p class="card__text">Developing repeatable methods for comparing factual claims against available evidence.</p></li>
+      <li class="card card--planned"><span class="status status--planned">Planned</span><h3 class="card__title">Tracing Provenance and Networks</h3><p class="card__text">Investigating where claims originate, and how recurring sources and amplification relationships can reveal larger patterns.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="involved" class="section section--strong" aria-labelledby="involved-title">
+  <div class="container section__inner">
+    <div class="section-head">
+      <p class="eyebrow">Get involved</p>
+      <h2 id="involved-title" class="section-title">Follow the work, or help with it.</h2>
+    </div>
+    <div class="involve">
+      <div class="involve__path">
+        <h3 class="pillar__title">Follow the Research</h3>
+        <p class="small-copy">Get project updates by email: new methods, results and corrections as they're published.</p>
+        <form class="signup" name="updates" method="POST" action="/subscribed/" data-netlify="true" netlify-honeypot="company">
+          <input type="hidden" name="form-name" value="updates">
+          <p hidden><label for="updates-company">Leave this field empty</label><input id="updates-company" name="company" tabindex="-1" autocomplete="off"></p>
+          <label class="field-label" for="updates-email">Email address</label>
+          <div class="signup__row">
+            <input class="input" id="updates-email" name="email" type="email" autocomplete="email" required>
+            <button class="button" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+      <div class="involve__path">
+        <h3 class="pillar__title">Contribute</h3>
+        <p class="small-copy">Researchers, technologists, journalists and others interested in collaborating: tell us what you work on and where you'd like to help.</p>
+        <div class="actions">
+          <a class="button button--outline" href="/contact/">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,462 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=Public+Sans:wght@500;600&amp;family=Libre+Franklin:wght@500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=IBM+Plex+Sans:wght@500;600&amp;family=IBM+Plex+Serif:ital,wght@0,400;1,400&amp;display=swap">
+  <style>
+    html, body { margin: 0; background: #f2f3ef; color: #1a1d1c; }
+    body { font-family: Georgia, "Times New Roman", serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .tf-news { --display: "Newsreader", Georgia, "Times New Roman", serif; --body: "Newsreader", Georgia, "Times New Roman", serif; --ui: "Public Sans", "Helvetica Neue", Arial, sans-serif; --w-display: 500; --track: -0.012em; }
+    .tf-franklin { --display: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; --body: "Source Serif 4", Georgia, serif; --ui: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; --w-display: 700; --track: -0.018em; }
+    .tf-plex { --display: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; --body: "IBM Plex Serif", Georgia, serif; --ui: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; --w-display: 600; --track: -0.012em; }
+    h1, h2, h3 { font-family: var(--display); font-weight: var(--w-display); text-wrap: balance; margin: 0; }
+    p { margin: 0; text-wrap: pretty; }
+    a { color: #1a1d1c; text-decoration-color: #8a918d; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+    a:hover { text-decoration-color: #1a1d1c; text-decoration-thickness: 2.5px; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #1a1d1c; outline-offset: 3px; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 16px; top: 12px; z-index: 10; }
+    .menu-btn { display: none !important; }
+    .mob-only { display: none !important; }
+    footer a:hover { text-decoration: underline !important; text-decoration-color: #f2f3ef; }
+    footer a:focus-visible { outline-color: #f2f3ef; }
+    @media (max-width: 860px) {
+      .nav-links { display: none !important; }
+      .menu-btn { display: inline-flex !important; }
+      .mirror { grid-template-columns: minmax(0, 1fr) !important; }
+      .mirror .arrow { transform: rotate(90deg); justify-self: center; }
+      .mirror > * { grid-column: 1 !important; grid-row: auto !important; }
+      .mirror .assess { order: 2; }
+      .mirror .mob-only { display: block !important; order: 1; }
+      .mirror .join { display: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  </style>
+</helmet>
+<div class="{{ typeClass }}" style="font-family: var(--body); font-size: 18px; line-height: 1.6; background: #f2f3ef; color: #1a1d1c;">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header style="border-bottom: 1px solid #cdd1cc; background: #f2f3ef;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 18px clamp(20px, 5vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+    <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: var(--w-display); font-size: 21px; letter-spacing: var(--track);">
+      <svg width="26" height="22" viewBox="0 0 26 22" aria-hidden="true"><path d="M4 4 C9 4, 9 11, 14 11 M4 18 C9 18, 9 11, 14 11 M14 11 L24 11" fill="none" stroke="#1a1d1c" stroke-width="1.6"></path><circle cx="4" cy="4" r="2.4" fill="#1a1d1c"></circle><circle cx="4" cy="18" r="2.4" fill="#1a1d1c"></circle><circle cx="14" cy="11" r="4.2" fill="#f4df4e" stroke="#1a1d1c" stroke-width="1.6"></circle></svg>
+      <span>Misinfo Trace</span>
+    </a>
+    <nav aria-label="Primary" style="display: flex; align-items: center; gap: 28px;">
+      <div class="nav-links" style="display: flex; align-items: center; gap: 26px; font-family: var(--ui); font-weight: 600; font-size: 15px;">
+        <a href="#about" style="text-decoration: none;">About</a>
+        <a href="#how" style="text-decoration: none;">Approach</a>
+        <a href="#research" style="text-decoration: none;">Research</a>
+        <a href="#involved" style="text-decoration: none;">Get Involved</a>
+      </div>
+      <a class="nav-links" href="#involved" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; background: #1a1d1c; color: #f2f3ef; text-decoration: none; font-family: var(--ui); font-weight: 600; font-size: 15px;">Follow the Research</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" style="align-items: center; gap: 8px; min-height: 44px; padding: 0 14px; background: transparent; border: 1.5px solid #1a1d1c; color: #1a1d1c; font-family: var(--ui); font-weight: 600; font-size: 15px;">
+        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14" stroke="#1a1d1c" stroke-width="1.6" fill="none"></path></svg>
+        <span>Menu</span>
+      </button>
+    </nav>
+  </div>
+  <div id="mobile-menu" hidden style="border-top: 1px solid #cdd1cc; padding: 8px clamp(20px, 5vw, 64px) 20px; font-family: var(--ui); font-weight: 600; font-size: 17px;">
+    <a href="#about" style="display: block; padding: 12px 0; text-decoration: none;">About</a>
+    <a href="#how" style="display: block; padding: 12px 0; text-decoration: none;">Approach</a>
+    <a href="#research" style="display: block; padding: 12px 0; text-decoration: none;">Research</a>
+    <a href="#involved" style="display: block; padding: 12px 0; text-decoration: none;">Get Involved</a>
+    <a href="#involved" style="display: block; margin-top: 8px; padding: 14px 18px; background: #1a1d1c; color: #f2f3ef; text-decoration: none; text-align: center;">Follow the Research</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section id="top" aria-labelledby="hero-title">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(48px, 7vw, 96px) clamp(20px, 5vw, 64px) clamp(56px, 8vw, 112px); display: flex; flex-direction: column; gap: clamp(36px, 4vw, 56px);">
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <p style="font-family: var(--ui); font-size: 15px; font-weight: 600; color: #535956;">An open research project</p>
+        <h1 id="hero-title" style="font-weight: var(--w-display); font-size: clamp(44px, 6.4vw, 92px); line-height: 1.04; letter-spacing: var(--track);">Misinformation is a system. We're studying how it works.</h1>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px 72px;">
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
+        <p style="font-size: clamp(19px, 1.6vw, 22px); line-height: 1.55; max-width: 34em; color: #2e3331;">Misinfo Trace detects factual narratives as they emerge, examines the evidence around them, and studies how misinformation originates and spreads — holding every claim to the same standard, whichever side it favors.</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; padding-top: 4px;">
+          <a href="#building" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; background: #1a1d1c; color: #f2f3ef; text-decoration: none; font-family: var(--ui); font-weight: 600; font-size: 17px;">Explore the Project</a>
+          <a href="#how" style="font-family: var(--ui); font-weight: 600; font-size: 17px;">See Our Approach →</a>
+        </div>
+      </div>
+
+      <figure style="flex: 1.6 1 520px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+        <div tabindex="0" role="region" aria-label="Illustrative diagram" style="overflow-x: auto;">
+          <svg viewBox="0 0 660 336" role="img" aria-label="Illustrative example: four differently worded posts about a 14 percent inflation rate converge into one claim, which three amplifiers carry to a wider audience." style="width: 100%; min-width: 480px; height: auto; display: block;">
+            <g style="font-family: var(--ui)" font-size="11.5" letter-spacing="1.2" fill="#535956">
+              <text x="0" y="12">VARIANTS</text>
+              <text x="400" y="12" text-anchor="middle">CLAIM</text>
+              <text x="500" y="12" text-anchor="middle">AMPLIFIED</text>
+              <text x="608" y="12" text-anchor="middle">AUDIENCE</text>
+            </g>
+            <g stroke="#1a1d1c" stroke-width="1.25" fill="none">
+              <path d="M320 57 C352 57, 352 173, 374 173"></path>
+              <path d="M320 133 C350 133, 350 173, 374 173"></path>
+              <path d="M320 209 C350 209, 350 173, 374 173"></path>
+              <path d="M320 285 C352 285, 352 173, 374 173"></path>
+              <path d="M426 173 L491 108 M426 173 L491 173 M426 173 L491 238"></path>
+            </g>
+            <g stroke="#535956" stroke-width="0.8" fill="none">
+              <path d="M505 108 L578 86 M505 108 L604 102 M505 108 L584 124 M505 108 L634 94"></path>
+              <path d="M505 173 L588 158 M505 173 L622 174 M505 173 L584 190 M505 173 L646 164"></path>
+              <path d="M505 238 L580 224 M505 238 L614 242 M505 238 L590 260 M505 238 L640 232"></path>
+            </g>
+            <g fill="#1a1d1c">
+              <circle cx="578" cy="86" r="3.5"></circle><circle cx="604" cy="102" r="3.5"></circle><circle cx="584" cy="124" r="3.5"></circle><circle cx="634" cy="94" r="3.5"></circle>
+              <circle cx="588" cy="158" r="3.5"></circle><circle cx="622" cy="174" r="3.5"></circle><circle cx="584" cy="190" r="3.5"></circle><circle cx="646" cy="164" r="3.5"></circle>
+              <circle cx="580" cy="224" r="3.5"></circle><circle cx="614" cy="242" r="3.5"></circle><circle cx="590" cy="260" r="3.5"></circle><circle cx="640" cy="232" r="3.5"></circle>
+            </g>
+            <g fill="#f2f3ef" stroke="#1a1d1c" stroke-width="1.5">
+              <circle cx="498" cy="108" r="8"></circle><circle cx="498" cy="173" r="8"></circle><circle cx="498" cy="238" r="8"></circle>
+            </g>
+            <circle cx="400" cy="173" r="26" fill="#f4df4e" stroke="#1a1d1c" stroke-width="1.5"></circle>
+            <text x="400" y="220" text-anchor="middle" style="font-family: var(--ui)" font-size="11.5" fill="#535956">4 wordings</text>
+            <g>
+              <rect x="0" y="26" width="320" height="62" fill="#fbfbf8" stroke="#cdd1cc"></rect>
+              <text x="14" y="47" style="font-family: var(--ui)" font-size="11.5" fill="#535956">POST · seen 09:14 UTC</text>
+              <text x="14" y="72" style="font-family: var(--body)" font-size="13.5" fill="#1a1d1c">“Inflation is running at 14%.”</text>
+              <rect x="0" y="102" width="320" height="62" fill="#fbfbf8" stroke="#cdd1cc"></rect>
+              <text x="14" y="123" style="font-family: var(--ui)" font-size="11.5" fill="#535956">POST · seen 09:31 UTC</text>
+              <text x="14" y="148" style="font-family: var(--body)" font-size="13.5" fill="#1a1d1c">“Prices are rising fourteen percent right now.”</text>
+              <rect x="0" y="178" width="320" height="62" fill="#fbfbf8" stroke="#cdd1cc"></rect>
+              <text x="14" y="199" style="font-family: var(--ui)" font-size="11.5" fill="#535956">ARTICLE · seen 10:02 UTC</text>
+              <text x="14" y="224" style="font-family: var(--body)" font-size="13.5" fill="#1a1d1c">“Current inflation is 14 percent.”</text>
+              <rect x="0" y="254" width="320" height="62" fill="#fbfbf8" stroke="#cdd1cc"></rect>
+              <text x="14" y="275" style="font-family: var(--ui)" font-size="11.5" fill="#535956">REPLY · seen 10:47 UTC</text>
+              <text x="14" y="300" style="font-family: var(--body)" font-size="13.5" fill="#1a1d1c">“The government is hiding a 14% inflation rate.”</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption style="display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; font-size: 15px; line-height: 1.5; color: #535956;">
+          <span style="font-family: var(--ui); font-size: 11px; font-weight: 500; color: #1a1d1c; border: 1px solid #1a1d1c; padding: 2px 6px;">Illustrative example</span>
+          <span>Not research data. Four wordings of one claim, recognized as the same narrative before it spreads.</span>
+        </figcaption>
+      </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section id="about" aria-labelledby="problem-title" style="border-top: 1px solid #cdd1cc;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 48px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 24px 72px;">
+        <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 18px;">
+          <p style="font-family: var(--ui); font-size: 15px; font-weight: 600; color: #535956;">The problem</p>
+          <h2 id="problem-title" style="font-weight: var(--w-display); font-size: clamp(34px, 4vw, 54px); line-height: 1.02; letter-spacing: var(--track);">False claims don't travel alone.</h2>
+        </div>
+        <div style="flex: 1 1 460px; display: flex; flex-direction: column; gap: 18px; max-width: 36em; padding-top: 6px;">
+          <p>Misinformation is usually treated as a string of isolated false statements, each checked on its own. In practice a claim starts somewhere, moves through posts, articles and reposts, gets picked up by recurring sources and amplifiers, and becomes part of a larger narrative.</p>
+          <p>Studying it as a system means following that whole path — not just ruling on the last sentence someone happened to read.</p>
+        </div>
+      </div>
+
+      <ol aria-label="How a claim spreads" style="list-style: none; margin: 0; padding: 20px 0; border-top: 1px solid #1a1d1c; border-bottom: 1px solid #1a1d1c; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-family: var(--ui); font-size: 15px; font-weight: 500; letter-spacing: 0.08em;">
+        <li style="padding: 4px 10px; border: 1px solid #1a1d1c;">CLAIM</li>
+        <li aria-hidden="true" style="color: #535956;">→</li>
+        <li style="padding: 4px 10px; border: 1px solid #1a1d1c;">SOURCE</li>
+        <li aria-hidden="true" style="color: #535956;">→</li>
+        <li style="padding: 4px 10px; border: 1px solid #1a1d1c;">AMPLIFICATION</li>
+        <li aria-hidden="true" style="color: #535956;">→</li>
+        <li style="padding: 4px 10px; border: 1px solid #1a1d1c;">NETWORK</li>
+        <li aria-hidden="true" style="color: #535956;">→</li>
+        <li style="padding: 4px 10px; border: 1px solid #1a1d1c;">IMPACT</li>
+      </ol>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <svg width="120" height="32" viewBox="0 0 120 32" aria-hidden="true"><path d="M0 28 L58 27 L78 25 L94 18 L107 9 L120 2" fill="none" stroke="#1a1d1c" stroke-width="1.8"></path><line x1="0" y1="31" x2="120" y2="31" stroke="#cdd1cc"></line></svg>
+          <h3 style="font-weight: var(--w-display); font-size: 23px; letter-spacing: var(--track);">Emerging</h3>
+          <p style="font-size: 17px; color: #2e3331;">A factual narrative beginning to spread before evidence or correction has caught up with it.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <svg width="120" height="32" viewBox="0 0 120 32" aria-hidden="true"><path d="M0 27 L12 27 L18 10 L24 27 L42 27 L48 13 L54 27 L74 27 L80 8 L86 27 L104 27 L110 14 L116 27 L120 27" fill="none" stroke="#1a1d1c" stroke-width="1.8"></path><line x1="0" y1="31" x2="120" y2="31" stroke="#cdd1cc"></line></svg>
+          <h3 style="font-weight: var(--w-display); font-size: 23px; letter-spacing: var(--track);">Persistent</h3>
+          <p style="font-size: 17px; color: #2e3331;">A narrative already checked or corrected that keeps resurfacing and reaching new audiences.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <svg width="120" height="32" viewBox="0 0 120 32" aria-hidden="true"><rect x="52" y="0" width="22" height="31" fill="#f4df4e"></rect><path d="M0 28 L20 24 L38 20 L54 12 L63 17 L72 21 L82 12 L100 8 L120 3" fill="none" stroke="#1a1d1c" stroke-width="1.8"></path><line x1="0" y1="31" x2="120" y2="31" stroke="#cdd1cc"></line></svg>
+          <h3 style="font-weight: var(--w-display); font-size: 23px; letter-spacing: var(--track);">Context-distorting</h3>
+          <p style="font-size: 17px; color: #2e3331;">A statement that may be accurate, but misleads because important context is left out — like a short window that hides the long-term trend.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We're Building -->
+  <section id="building" aria-labelledby="building-title" style="border-top: 1px solid #cdd1cc;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 48px;">
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <p style="font-family: var(--ui); font-size: 15px; font-weight: 600; color: #535956;">What we're building</p>
+        <h2 id="building-title" style="font-weight: var(--w-display); font-size: clamp(34px, 4vw, 54px); line-height: 1.02; letter-spacing: var(--track);">Identify. Investigate. Trace.</h2>
+        <p style="align-self: flex-start; font-family: var(--ui); font-size: 13px; font-weight: 500; border: 1px dashed #535956; color: #2e3331; padding: 4px 10px;">Research direction — not all of this exists yet</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 0; border-top: 2px solid #1a1d1c;">
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px 28px 8px 0;">
+          <h3 style="font-weight: var(--w-display); font-size: 26px; letter-spacing: var(--track);">Identify</h3>
+          <p style="font-size: 17px; color: #2e3331;">Detect factual claims and narratives worth investigating — including the same claim in different words — before judging whether they are true.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px 28px 8px 0;">
+          <h3 style="font-weight: var(--w-display); font-size: 26px; letter-spacing: var(--track);">Investigate</h3>
+          <p style="font-size: 17px; color: #2e3331;">Determine what available evidence supports or contradicts those claims.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px 28px 8px 0;">
+          <h3 style="font-weight: var(--w-display); font-size: 26px; letter-spacing: var(--track);">Trace</h3>
+          <p style="font-size: 17px; color: #2e3331;">Study where misinformation originates, how it spreads, and whether recurring patterns emerge.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 32px 72px; padding-top: 16px;">
+        <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 14px;">
+          <h3 style="font-weight: var(--w-display); font-size: 26px; letter-spacing: var(--track);">How this differs from fact-checking</h3>
+          <p style="font-size: 17px; color: #2e3331; max-width: 30em;">Fact-checking is essential work, and it usually begins once a claim is already circulating widely. We are researching whether narratives can be found earlier and routed to human verification sooner.</p>
+          <p style="font-family: var(--display); font-weight: var(--w-display); font-size: 22px; letter-spacing: var(--track); padding-top: 6px;">Detection comes before judgment.</p>
+        </div>
+        <div tabindex="0" role="region" aria-label="Fact-checking comparison" style="flex: 2 1 520px; overflow-x: auto;">
+          <table style="width: 100%; min-width: 520px; border-collapse: collapse; font-size: 16px; line-height: 1.45;">
+            <thead>
+              <tr style="font-family: var(--ui); font-size: 13px; font-weight: 500; text-align: left;">
+                <th scope="col" style="padding: 0 16px 12px 0; border-bottom: 2px solid #1a1d1c; color: #535956; font-weight: 500;"><span style="position: absolute; left: -9999px;">Aspect</span></th>
+                <th scope="col" style="padding: 0 16px 12px 0; border-bottom: 2px solid #1a1d1c; color: #535956; font-weight: 500;">Conventional fact-checking</th>
+                <th scope="col" style="padding: 0 0 12px 0; border-bottom: 2px solid #1a1d1c; color: #1a1d1c; font-weight: 500;">What Misinfo Trace aims to do</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" style="text-align: left; vertical-align: top; padding: 14px 16px 14px 0; border-bottom: 1px solid #cdd1cc; font-family: var(--ui); font-weight: 600; font-size: 15px;">Starts with</th>
+                <td style="vertical-align: top; padding: 14px 16px 14px 0; border-bottom: 1px solid #cdd1cc; color: #535956;">A claim someone has chosen to check</td>
+                <td style="vertical-align: top; padding: 14px 0; border-bottom: 1px solid #cdd1cc;">Narratives detected as they emerge</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align: left; vertical-align: top; padding: 14px 16px 14px 0; border-bottom: 1px solid #cdd1cc; font-family: var(--ui); font-weight: 600; font-size: 15px;">Timing</th>
+                <td style="vertical-align: top; padding: 14px 16px 14px 0; border-bottom: 1px solid #cdd1cc; color: #535956;">Often after the claim has spread widely</td>
+                <td style="vertical-align: top; padding: 14px 0; border-bottom: 1px solid #cdd1cc;">While the narrative is still emerging</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align: left; vertical-align: top; padding: 14px 16px 14px 0; border-bottom: 1px solid #cdd1cc; font-family: var(--ui); font-weight: 600; font-size: 15px;">Wording</th>
+                <td style="vertical-align: top; padding: 14px 16px 14px 0; border-bottom: 1px solid #cdd1cc; color: #535956;">One phrasing of the claim</td>
+                <td style="vertical-align: top; padding: 14px 0; border-bottom: 1px solid #cdd1cc;">The same claim, however it is worded</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align: left; vertical-align: top; padding: 14px 16px 14px 0; border-bottom: 1px solid #cdd1cc; font-family: var(--ui); font-weight: 600; font-size: 15px;">Afterwards</th>
+                <td style="vertical-align: top; padding: 14px 16px 14px 0; border-bottom: 1px solid #cdd1cc; color: #535956;">The check is published</td>
+                <td style="vertical-align: top; padding: 14px 0; border-bottom: 1px solid #cdd1cc;">Watch for debunked narratives resurfacing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how" aria-labelledby="how-title" style="border-top: 1px solid #cdd1cc; background: #e9ebe6;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 40px 72px;">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 18px;">
+        <p style="font-family: var(--ui); font-size: 15px; font-weight: 600; color: #535956;">How it works</p>
+        <h2 id="how-title" style="font-weight: var(--w-display); font-size: clamp(34px, 4vw, 54px); line-height: 1.02; letter-spacing: var(--track);">From first sighting to published method.</h2>
+        <p style="font-size: 17px; color: #2e3331; max-width: 24em;">Seven steps, in order. Each is designed to leave a record someone else can check.</p>
+        <p style="align-self: flex-start; font-family: var(--ui); font-size: 13px; font-weight: 500; border: 1px dashed #535956; color: #2e3331; padding: 4px 10px;">Research direction — not all of this exists yet</p>
+      </div>
+      <ol style="flex: 2 1 560px; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
+        <li style="display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 20px;">
+          <div style="display: flex; flex-direction: column; align-items: center;"><span style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #1a1d1c; background: #f2f3ef; font-family: var(--ui); font-size: 14px; font-weight: 500;">1</span><span style="flex: 1; width: 1.5px; background: #1a1d1c;"></span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 5px 0 28px;"><h3 style="flex: 0 0 150px; font-weight: var(--w-display); font-size: 21px; letter-spacing: var(--track);">Observe</h3><p style="flex: 1 1 280px; font-size: 17px; color: #2e3331;">Collect public posts and published articles from open sources, recording when each was published and when we saw it.</p></div>
+        </li>
+        <li style="display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 20px;">
+          <div style="display: flex; flex-direction: column; align-items: center;"><span style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #1a1d1c; background: #f2f3ef; font-family: var(--ui); font-size: 14px; font-weight: 500;">2</span><span style="flex: 1; width: 1.5px; background: #1a1d1c;"></span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 5px 0 28px;"><h3 style="flex: 0 0 150px; font-weight: var(--w-display); font-size: 21px; letter-spacing: var(--track);">Classify</h3><p style="flex: 1 1 280px; font-size: 17px; color: #2e3331;">Keep public-interest factual claims and record what kind of statement each is — directly verifiable, contested, interpretive, normative — without judging whether it is true.</p></div>
+        </li>
+        <li style="display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 20px;">
+          <div style="display: flex; flex-direction: column; align-items: center;"><span style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #1a1d1c; background: #f2f3ef; font-family: var(--ui); font-size: 14px; font-weight: 500;">3</span><span style="flex: 1; width: 1.5px; background: #1a1d1c;"></span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 5px 0 28px;"><h3 style="flex: 0 0 150px; font-weight: var(--w-display); font-size: 21px; letter-spacing: var(--track);">Investigate</h3><p style="flex: 1 1 280px; font-size: 17px; color: #2e3331;">Gather the evidence that supports or contradicts the claim, from sources anyone can inspect.</p></div>
+        </li>
+        <li style="display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 20px;">
+          <div style="display: flex; flex-direction: column; align-items: center;"><span style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #1a1d1c; background: #f2f3ef; font-family: var(--ui); font-size: 14px; font-weight: 500;">4</span><span style="flex: 1; width: 1.5px; background: #1a1d1c;"></span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 5px 0 28px;"><h3 style="flex: 0 0 150px; font-weight: var(--w-display); font-size: 21px; letter-spacing: var(--track);">Evaluate</h3><div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 12px;"><p style="font-size: 17px; color: #2e3331;">Produce a structured assessment with the evidence and confidence behind it. No single AI model decides whether a claim is true, and consequential conclusions are human-reviewable.</p><ul aria-label="Possible outcomes" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--ui); font-size: 13px; font-weight: 500;"><li style="border: 1px solid #1a1d1c; padding: 3px 8px;">Supported</li><li style="border: 1px solid #1a1d1c; padding: 3px 8px;">Contradicted</li><li style="border: 1px solid #1a1d1c; padding: 3px 8px;">Disputed</li><li style="border: 1px solid #1a1d1c; padding: 3px 8px;">Insufficient evidence</li><li style="border: 1px solid #1a1d1c; padding: 3px 8px;">Unknown</li></ul></div></div>
+        </li>
+        <li style="display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 20px;">
+          <div style="display: flex; flex-direction: column; align-items: center;"><span style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #1a1d1c; background: #f2f3ef; font-family: var(--ui); font-size: 14px; font-weight: 500;">5</span><span style="flex: 1; width: 1.5px; background: #1a1d1c;"></span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 5px 0 28px;"><h3 style="flex: 0 0 150px; font-weight: var(--w-display); font-size: 21px; letter-spacing: var(--track);">Trace</h3><p style="flex: 1 1 280px; font-size: 17px; color: #2e3331;">Follow how the claim and its rewordings spread over time and across sources.</p></div>
+        </li>
+        <li style="display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 20px;">
+          <div style="display: flex; flex-direction: column; align-items: center;"><span style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #1a1d1c; background: #f2f3ef; font-family: var(--ui); font-size: 14px; font-weight: 500;">6</span><span style="flex: 1; width: 1.5px; background: #1a1d1c;"></span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 5px 0 28px;"><h3 style="flex: 0 0 150px; font-weight: var(--w-display); font-size: 21px; letter-spacing: var(--track);">Connect</h3><p style="flex: 1 1 280px; font-size: 17px; color: #2e3331;">Link related claims into larger narratives, and notice when an old narrative resurfaces.</p></div>
+        </li>
+        <li style="display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 20px;">
+          <div style="display: flex; flex-direction: column; align-items: center;"><span style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #1a1d1c; background: #f2f3ef; font-family: var(--ui); font-size: 14px; font-weight: 500;">7</span></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 5px 0 0;"><h3 style="flex: 0 0 150px; font-weight: var(--w-display); font-size: 21px; letter-spacing: var(--track);">Publish</h3><p style="flex: 1 1 280px; font-size: 17px; color: #2e3331;">Release methods, evidence and corrections so others can check the work.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Same Standard -->
+  <section id="standard" aria-labelledby="standard-title" style="border-top: 1px solid #cdd1cc;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 48px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 24px 72px; align-items: flex-end;">
+        <div style="flex: 1 1 460px; display: flex; flex-direction: column; gap: 18px;">
+          <p style="font-family: var(--ui); font-size: 15px; font-weight: 600; color: #535956;">Same standard, regardless of side</p>
+          <h2 id="standard-title" style="font-weight: var(--w-display); font-size: clamp(38px, 5vw, 68px); line-height: 1; letter-spacing: var(--track);">Same claim. Same evidence. Same standard.</h2>
+        </div>
+        <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 16px; max-width: 32em;">
+          <p>Our goal is to filter, classify and assess every claim by the same public-interest, classification and evidentiary rules — whichever side its political or ideological implications favor.</p>
+          <p>We don't just assert that. We test it, by running mirrored pairs of claims through the method and checking that they're treated alike.</p>
+        </div>
+      </div>
+
+      <div class="mirror" role="img" aria-label="Diagram: a claim from position A and its mirrored claim from position B each pass through the same methodology and arrive at the same kind of evidence-based assessment." style="display: grid; grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1.25fr) 40px minmax(0, 1.2fr); grid-template-rows: auto auto; gap: 16px 12px; align-items: center;">
+        <div style="border: 1.5px solid #1a1d1c; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px;"><span style="font-family: var(--ui); font-size: 13px; font-weight: 500; color: #535956;">Position A</span><span style="font-family: var(--ui); font-weight: 600; font-size: 18px;">A claim favoring one side</span></div>
+        <span class="arrow" aria-hidden="true" style="font-size: 24px; text-align: center;">→</span>
+        <div style="background: #1a1d1c; color: #f2f3ef; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-family: var(--display); font-weight: var(--w-display); font-size: 18px;">Same methodology</span><span style="font-family: var(--ui); font-size: 12px; letter-spacing: 0.04em; color: #cdd1cc;">scope rules · classification · evidentiary standard</span></div>
+        <svg class="join" aria-hidden="true" viewBox="0 0 40 200" preserveAspectRatio="none" style="grid-row: 1 / span 2; grid-column: 4; width: 40px; height: 100%; display: block;"><path d="M0 50 C24 50, 16 100, 40 100 M0 150 C24 150, 16 100, 40 100" fill="none" stroke="#1a1d1c" stroke-width="1.5" vector-effect="non-scaling-stroke"></path></svg>
+        <span class="arrow mob-only" aria-hidden="true" style="font-size: 24px; text-align: center;">→</span>
+        <div class="assess" style="grid-row: 1 / span 2; grid-column: 5; border: 2px solid #1a1d1c; background: #fbfbf8; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-family: var(--display); font-weight: var(--w-display); font-size: 22px; letter-spacing: var(--track);">Evidence-based assessment</span>
+          <ul aria-label="Possible outcomes" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--ui); font-size: 13px; font-weight: 500;"><li style="border: 1px solid #1a1d1c; padding: 3px 8px;">Supported</li><li style="border: 1px solid #1a1d1c; padding: 3px 8px;">Contradicted</li><li style="border: 1px solid #1a1d1c; padding: 3px 8px;">Disputed</li><li style="border: 1px solid #1a1d1c; padding: 3px 8px;">Unknown</li></ul>
+          <span style="font-size: 15px; color: #535956;">“Unknown” is a valid outcome.</span>
+        </div>
+        <div style="border: 1.5px solid #1a1d1c; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px;"><span style="font-family: var(--ui); font-size: 13px; font-weight: 500; color: #535956;">Position B</span><span style="font-family: var(--ui); font-weight: 600; font-size: 18px;">The mirrored claim, favoring the other</span></div>
+        <span class="arrow" aria-hidden="true" style="font-size: 24px; text-align: center;">→</span>
+        <div style="background: #1a1d1c; color: #f2f3ef; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;"><span style="font-family: var(--display); font-weight: var(--w-display); font-size: 18px;">Same methodology</span><span style="font-family: var(--ui); font-size: 12px; letter-spacing: 0.04em; color: #cdd1cc;">scope rules · classification · evidentiary standard</span></div>
+      </div>
+
+      <a href="#research" style="align-self: flex-start; font-family: var(--ui); font-weight: 600; font-size: 18px;">See how we're testing for bias →</a>
+    </div>
+  </section>
+
+  <!-- Research Principles -->
+  <section aria-labelledby="principles-title" style="border-top: 1px solid #cdd1cc;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <p style="font-family: var(--ui); font-size: 15px; font-weight: 600; color: #535956;">Research principles</p>
+        <h2 id="principles-title" style="font-weight: var(--w-display); font-size: clamp(34px, 4vw, 54px); line-height: 1.02; letter-spacing: var(--track);">What we hold ourselves to.</h2>
+      </div>
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 36px 48px;">
+        <li style="display: flex; flex-direction: column; gap: 2px; border-top: 1px solid #1a1d1c; padding-top: 16px;"><span style="font-family: var(--display); font-weight: var(--w-display); font-size: 32px; letter-spacing: var(--track);">Evidence</span><span style="font-style: italic; font-size: 21px; color: #535956;">over authority</span></li>
+        <li style="display: flex; flex-direction: column; gap: 2px; border-top: 1px solid #1a1d1c; padding-top: 16px;"><span style="font-family: var(--display); font-weight: var(--w-display); font-size: 32px; letter-spacing: var(--track);">Transparency</span><span style="font-style: italic; font-size: 21px; color: #535956;">over trust</span></li>
+        <li style="display: flex; flex-direction: column; gap: 2px; border-top: 1px solid #1a1d1c; padding-top: 16px;"><span style="font-family: var(--display); font-weight: var(--w-display); font-size: 32px; letter-spacing: var(--track);">Consistency</span><span style="font-style: italic; font-size: 21px; color: #535956;">over ideology</span></li>
+        <li style="display: flex; flex-direction: column; gap: 2px; border-top: 1px solid #1a1d1c; padding-top: 16px;"><span style="font-family: var(--display); font-weight: var(--w-display); font-size: 32px; letter-spacing: var(--track);">Uncertainty</span><span style="font-style: italic; font-size: 21px; color: #535956;">over false certainty</span></li>
+        <li style="display: flex; flex-direction: column; gap: 2px; border-top: 1px solid #1a1d1c; padding-top: 16px;"><span style="font-family: var(--display); font-weight: var(--w-display); font-size: 32px; letter-spacing: var(--track);">Correction</span><span style="font-style: italic; font-size: 21px; color: #535956;">over defensiveness</span></li>
+        <li style="display: flex; flex-direction: column; gap: 2px; border-top: 1px solid #1a1d1c; padding-top: 16px;"><span style="font-family: var(--display); font-weight: var(--w-display); font-size: 32px; letter-spacing: var(--track);">Investigation</span><span style="font-style: italic; font-size: 21px; color: #535956;">over accusation</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- What This Project Is Not -->
+  <section aria-labelledby="not-title" style="border-top: 1px solid #cdd1cc; background: #e9ebe6;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 40px 72px;">
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 18px;">
+        <p style="font-family: var(--ui); font-size: 15px; font-weight: 600; color: #535956;">What this project is not</p>
+        <h2 id="not-title" style="font-weight: var(--w-display); font-size: clamp(34px, 4vw, 54px); line-height: 1.02; letter-spacing: var(--track);">The concerns you should have. Our answers.</h2>
+      </div>
+      <dl style="flex: 2 1 560px; margin: 0; display: flex; flex-direction: column;">
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 20px 0; border-top: 1px solid #1a1d1c;"><dt style="flex: 1 1 260px; font-family: var(--display); font-weight: var(--w-display); font-size: 20px; line-height: 1.3; letter-spacing: var(--track);">Not a system for policing opinions.</dt><dd style="flex: 1 1 260px; margin: 0; font-size: 17px; color: #2e3331;">It evaluates factual claims.</dd></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 20px 0; border-top: 1px solid #1a1d1c;"><dt style="flex: 1 1 260px; font-family: var(--display); font-weight: var(--w-display); font-size: 20px; line-height: 1.3; letter-spacing: var(--track);">Not a partisan fact-checking project.</dt><dd style="flex: 1 1 260px; margin: 0; font-size: 17px; color: #2e3331;">The same methodology applies regardless of viewpoint.</dd></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 20px 0; border-top: 1px solid #1a1d1c;"><dt style="flex: 1 1 260px; font-family: var(--display); font-weight: var(--w-display); font-size: 20px; line-height: 1.3; letter-spacing: var(--track);">Not an automated truth machine.</dt><dd style="flex: 1 1 260px; margin: 0; font-size: 17px; color: #2e3331;">No single AI model decides whether a claim is true. Consequential conclusions are human-reviewable.</dd></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 20px 0; border-top: 1px solid #1a1d1c;"><dt style="flex: 1 1 260px; font-family: var(--display); font-weight: var(--w-display); font-size: 20px; line-height: 1.3; letter-spacing: var(--track);">Not an authority asking you to accept its conclusions.</dt><dd style="flex: 1 1 260px; margin: 0; font-size: 17px; color: #2e3331;">Evidence and methodology are meant to be inspectable.</dd></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 20px 0; border-top: 1px solid #1a1d1c; border-bottom: 1px solid #1a1d1c;"><dt style="flex: 1 1 260px; font-family: var(--display); font-weight: var(--w-display); font-size: 20px; line-height: 1.3; letter-spacing: var(--track);">Not a system for labeling someone a bad actor because they were wrong.</dt><dd style="flex: 1 1 260px; margin: 0; font-size: 17px; color: #2e3331;">Intent and coordination require additional evidence.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Current Research -->
+  <section id="research" aria-labelledby="research-title" style="border-top: 1px solid #cdd1cc;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 40px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 24px 72px; align-items: flex-end;">
+        <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 18px;">
+          <p style="font-family: var(--ui); font-size: 15px; font-weight: 600; color: #535956;">Current research</p>
+          <h2 id="research-title" style="font-weight: var(--w-display); font-size: clamp(34px, 4vw, 54px); line-height: 1.02; letter-spacing: var(--track);">Where the work stands.</h2>
+          <p style="font-size: 17px; color: #2e3331; max-width: 30em;">Each area is labeled by how far it has actually come. Planned means planned.</p>
+        </div>
+        <ul aria-label="Status key" style="flex: 1 1 360px; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #2e3331;">
+          <li style="display: flex; align-items: center; gap: 12px;"><span style="flex: 0 0 116px; font-family: var(--ui); font-size: 13px; font-weight: 500; text-align: center; background: #1a1d1c; border: 1px solid #1a1d1c; padding: 3px 0; color: #f2f3ef;">Researching</span><span>Under active study</span></li>
+          <li style="display: flex; align-items: center; gap: 12px;"><span style="flex: 0 0 116px; font-family: var(--ui); font-size: 13px; font-weight: 500; text-align: center; border: 1px solid #1a1d1c; padding: 3px 0; color: #1a1d1c;">Testing</span><span>Method built, being tested</span></li>
+          <li style="display: flex; align-items: center; gap: 12px;"><span style="flex: 0 0 116px; font-family: var(--ui); font-size: 13px; font-weight: 500; text-align: center; border: 1px dashed #535956; padding: 3px 0; color: #535956;">Planned</span><span>On the roadmap; no results yet</span></li>
+        </ul>
+      </div>
+
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px;">
+        <li style="background: #fbfbf8; border: 1px solid #1a1d1c; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="align-self: flex-start; font-family: var(--ui); font-size: 13px; font-weight: 500; background: #1a1d1c; color: #f2f3ef; border: 1px solid #1a1d1c; padding: 3px 8px;">Researching</span><h3 style="font-weight: var(--w-display); font-size: 23px; letter-spacing: var(--track);">Early Warning</h3><p style="font-size: 16px; line-height: 1.55; color: #2e3331;">Testing whether emerging factual narratives can be detected before they are widely recognized, including the same claim in different words.</p></li>
+        <li style="background: #fbfbf8; border: 1px solid #1a1d1c; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="align-self: flex-start; font-family: var(--ui); font-size: 13px; font-weight: 500; border: 1px solid #1a1d1c; padding: 3px 8px;">Testing</span><h3 style="font-weight: var(--w-display); font-size: 23px; letter-spacing: var(--track);">Defining the Boundary</h3><p style="font-size: 16px; line-height: 1.55; color: #2e3331;">Determining which kinds of content should qualify for misinformation analysis.</p></li>
+        <li style="background: #fbfbf8; border: 1px solid #1a1d1c; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="align-self: flex-start; font-family: var(--ui); font-size: 13px; font-weight: 500; border: 1px solid #1a1d1c; padding: 3px 8px;">Testing</span><h3 style="font-weight: var(--w-display); font-size: 23px; letter-spacing: var(--track);">Testing for Bias</h3><p style="font-size: 16px; line-height: 1.55; color: #2e3331;">Testing whether opposed claims receive equivalent treatment under the methodology.</p></li>
+        <li style="border: 1px dashed #535956; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="align-self: flex-start; font-family: var(--ui); font-size: 13px; font-weight: 500; border: 1px dashed #535956; color: #535956; padding: 3px 8px;">Planned</span><h3 style="font-weight: var(--w-display); font-size: 23px; letter-spacing: var(--track);">Persistent Narratives</h3><p style="font-size: 16px; line-height: 1.55; color: #2e3331;">Finding already-debunked narratives that keep resurfacing, and tracing where they reappear.</p></li>
+        <li style="border: 1px dashed #535956; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="align-self: flex-start; font-family: var(--ui); font-size: 13px; font-weight: 500; border: 1px dashed #535956; color: #535956; padding: 3px 8px;">Planned</span><h3 style="font-weight: var(--w-display); font-size: 23px; letter-spacing: var(--track);">Evaluating Claims</h3><p style="font-size: 16px; line-height: 1.55; color: #2e3331;">Developing repeatable methods for comparing factual claims against available evidence.</p></li>
+        <li style="border: 1px dashed #535956; padding: 24px; display: flex; flex-direction: column; gap: 12px;"><span style="align-self: flex-start; font-family: var(--ui); font-size: 13px; font-weight: 500; border: 1px dashed #535956; color: #535956; padding: 3px 8px;">Planned</span><h3 style="font-weight: var(--w-display); font-size: 23px; letter-spacing: var(--track);">Tracing Provenance and Networks</h3><p style="font-size: 16px; line-height: 1.55; color: #2e3331;">Investigating where claims originate, and how recurring sources and amplification relationships can reveal larger patterns.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Get Involved -->
+  <section id="involved" aria-labelledby="involved-title" style="border-top: 2px solid #1a1d1c;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 44px;">
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <p style="font-family: var(--ui); font-size: 15px; font-weight: 600; color: #535956;">Get involved</p>
+        <h2 id="involved-title" style="font-weight: var(--w-display); font-size: clamp(34px, 4vw, 54px); line-height: 1.02; letter-spacing: var(--track);">Follow the work, or help with it.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px 72px;">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <h3 style="font-weight: var(--w-display); font-size: 26px; letter-spacing: var(--track);">Follow the Research</h3>
+          <p style="font-size: 17px; color: #2e3331; max-width: 30em;">Get project updates by email: new methods, results and corrections as they're published.</p>
+          <form style="display: flex; flex-direction: column; gap: 8px; max-width: 480px;">
+            <label for="email" style="font-family: var(--ui); font-weight: 600; font-size: 15px;">Email address</label>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <input id="email" type="email" autocomplete="email" placeholder="you@example.org" style="flex: 1 1 220px; min-height: 52px; padding: 0 16px; border: 1.5px solid #1a1d1c; background: #fbfbf8; color: #1a1d1c; font-family: var(--body); font-size: 17px;">
+              <button type="submit" style="min-height: 52px; padding: 0 26px; background: #1a1d1c; color: #f2f3ef; border: 0; font-family: var(--ui); font-weight: 600; font-size: 17px;">Subscribe</button>
+            </div>
+          </form>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <h3 style="font-weight: var(--w-display); font-size: 26px; letter-spacing: var(--track);">Contribute</h3>
+          <p style="font-size: 17px; color: #2e3331; max-width: 30em;">Researchers, technologists, journalists and others interested in collaborating: tell us what you work on and where you'd like to help.</p>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px;">
+            <a href="#contact" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border: 1.5px solid #1a1d1c; text-decoration: none; font-family: var(--ui); font-weight: 600; font-size: 17px;">Get in touch</a>
+            <span style="font-family: var(--ui); font-size: 14px; color: #535956;">[CONTACT EMAIL]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer style="background: #1a1d1c; color: #f2f3ef;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 48px clamp(20px, 5vw, 64px) 56px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: var(--w-display); font-size: 21px; letter-spacing: var(--track);">
+        <svg width="26" height="22" viewBox="0 0 26 22" aria-hidden="true"><path d="M4 4 C9 4, 9 11, 14 11 M4 18 C9 18, 9 11, 14 11 M14 11 L24 11" fill="none" stroke="#f2f3ef" stroke-width="1.6"></path><circle cx="4" cy="4" r="2.4" fill="#f2f3ef"></circle><circle cx="4" cy="18" r="2.4" fill="#f2f3ef"></circle><circle cx="14" cy="11" r="4.2" fill="#f4df4e" stroke="#f2f3ef" stroke-width="1.6"></circle></svg>
+        <span>Misinfo Trace</span>
+      </div>
+      <p style="font-size: 17px; color: #cdd1cc;">Misinfo Trace — Evidence before conclusions.</p>
+    </div>
+    <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 10px 24px; font-family: var(--ui); font-weight: 600; font-size: 15px;">
+      <a href="#about" style="color: #f2f3ef; text-decoration: none;">About</a>
+      <a href="#how" style="color: #f2f3ef; text-decoration: none;">Methodology</a>
+      <a href="#research" style="color: #f2f3ef; text-decoration: none;">Research</a>
+      <a href="#involved" style="color: #f2f3ef; text-decoration: none;">Get Involved</a>
+      <a href="#privacy" style="color: #f2f3ef; text-decoration: none;">Privacy</a>
+      <a href="#contact" style="color: #f2f3ef; text-decoration: none;">Contact</a>
+    </nav>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"typeface":{"editor":"enum","options":["Newsreader","Libre Franklin","IBM Plex"],"default":"Newsreader","section":"Type"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const classes = { 'Newsreader': 'tf-news', 'Libre Franklin': 'tf-franklin', 'IBM Plex': 'tf-plex' };
+    return { typeClass: classes[this.props.typeface ?? 'Newsreader'] ?? 'tf-news' };
+  }
+}
+</script>
+</body>
+</html>

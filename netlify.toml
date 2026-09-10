@@ -1,0 +1,8 @@
+# Netlify reads the Node version from .nvmrc. Response headers, including the
+# Content-Security-Policy, live in src/_headers: the build copies that file to
+# _site/_headers, and the local test server applies the same file, so the
+# browser tests see exactly the headers production sends.
+
+[build]
+  command = "npm run build"
+  publish = "_site"

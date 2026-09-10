@@ -1,0 +1,1222 @@
+/*
+ * Misinfo Trace — site styles.
+ *
+ * Every colour below is listed in scripts/check-contrast.mjs; add a pair there
+ * before a new colour or combination goes in here. The yellow (--marker) is
+ * for graphics only — the logo mark, the hero diagram's claim node and the
+ * context-distorting sparkline — never behind text.
+ *
+ * No style attributes anywhere: the Content-Security-Policy in src/_headers
+ * allows styles from this file only.
+ */
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("/assets/fonts/newsreader-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/assets/fonts/newsreader-latin-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/assets/fonts/newsreader-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("/assets/fonts/public-sans-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("/assets/fonts/public-sans-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+
+  --paper: #f2f3ef;
+  --band: #e9ebe6;
+  --card: #fbfbf8;
+  --ink: #1a1d1c;
+  --text: #2e3331;
+  --slate: #535956;
+  --rule: #cdd1cc;
+  --marker: #f4df4e;
+  --underline: #8a918d;
+  --on-ink: #f2f3ef;
+  --on-ink-muted: #cdd1cc;
+
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-ui: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --track: -0.012em;
+
+  --gutter: clamp(20px, 5vw, 64px);
+  --section-pad: clamp(64px, 8vw, 112px);
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: var(--track);
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+figure,
+dl,
+dd {
+  margin: 0;
+}
+
+svg {
+  max-width: 100%;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--underline);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  text-decoration-color: var(--ink);
+  text-decoration-thickness: 2.5px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* The skip link moves focus to <main>, which is not itself interactive. */
+main:focus {
+  outline: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 20;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--on-ink);
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.scroll-x {
+  overflow-x: auto;
+}
+
+/* ── Shared type and controls ─────────────────────────────────────────── */
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--slate);
+}
+
+.lede {
+  max-width: 34em;
+  font-size: clamp(19px, 1.6vw, 22px);
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.small-copy {
+  font-size: 17px;
+  color: var(--text);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 26px;
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--on-ink);
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #000000;
+  color: var(--on-ink);
+}
+
+.button--small {
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+.button--outline {
+  background: transparent;
+  color: var(--ink);
+}
+
+.button--outline:hover {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.link-strong {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.link-strong--large {
+  align-self: flex-start;
+  font-size: 18px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 28px;
+}
+
+.tag {
+  padding: 2px 6px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.note-tag {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border: 1px dashed var(--slate);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.outcomes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.outcomes li {
+  padding: 3px 8px;
+  border: 1px solid var(--ink);
+}
+
+/* ── Header ───────────────────────────────────────────────────────────── */
+
+.site-header {
+  position: relative;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-block: 18px;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: var(--track);
+  text-decoration: none;
+}
+
+.wordmark .mark {
+  flex: none;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.site-nav__list a:not(.button) {
+  text-decoration: none;
+}
+
+.site-nav__list a:not(.button):hover {
+  text-decoration: underline;
+}
+
+.menu-button {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .js .menu-button {
+    display: inline-flex;
+  }
+
+  .js .site-nav__list {
+    display: none;
+  }
+
+  .js .site-nav.is-open .site-nav__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px var(--gutter) 20px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    font-size: 17px;
+  }
+
+  .js .site-nav.is-open .site-nav__list a:not(.button) {
+    display: block;
+    padding: 12px 0;
+  }
+
+  .js .site-nav.is-open .site-nav__cta {
+    margin-top: 8px;
+  }
+
+  .js .site-nav.is-open .site-nav__cta .button {
+    width: 100%;
+  }
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 4vw, 56px);
+  padding-block: clamp(48px, 7vw, 96px) clamp(56px, 8vw, 112px);
+}
+
+.hero__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero__title {
+  font-size: clamp(44px, 6.4vw, 92px);
+  line-height: 1.04;
+}
+
+.hero__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px 72px;
+}
+
+.hero__copy {
+  flex: 1 1 340px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero__figure {
+  flex: 1.6 1 520px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Scales to fit rather than scrolling sideways, so it reflows at 320px
+   (400% zoom) — zoom enlarges its labels along with everything else. */
+.diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.diagram .dg-label {
+  font-family: var(--font-ui);
+}
+
+.diagram .dg-quote {
+  font-family: var(--font-body);
+}
+
+.figure-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  color: var(--slate);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ── Sections ─────────────────────────────────────────────────────────── */
+
+.section {
+  border-top: 1px solid var(--rule);
+}
+
+.section--band {
+  background: var(--band);
+}
+
+.section--strong {
+  border-top: 2px solid var(--ink);
+}
+
+.section__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-block: var(--section-pad);
+}
+
+.section__inner--split {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px 72px;
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.section-head--aside {
+  flex: 1 1 300px;
+}
+
+.section-head--aside .small-copy {
+  max-width: 24em;
+}
+
+.section-title {
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.05;
+}
+
+.section-title--large {
+  font-size: clamp(38px, 5vw, 68px);
+  line-height: 1.02;
+}
+
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 72px;
+}
+
+.split > * {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.split--end {
+  align-items: flex-end;
+}
+
+.body-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 36em;
+}
+
+.body-copy--narrow {
+  max-width: 32em;
+}
+
+/* The problem */
+
+.chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.chain li:not(.chain__arrow) {
+  padding: 4px 10px;
+  border: 1px solid var(--ink);
+}
+
+.chain__arrow {
+  color: var(--slate);
+}
+
+.kinds {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 40px;
+}
+
+.kind {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.kind__title {
+  font-size: 25px;
+}
+
+/* What we're building */
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  border-top: 2px solid var(--ink);
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 28px 8px 0;
+}
+
+.pillar__title {
+  font-size: 28px;
+}
+
+.split--compare {
+  gap: 32px 72px;
+  padding-top: 16px;
+}
+
+.split--compare > .compare-intro {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.split--compare > .compare-wrap {
+  flex: 2 1 520px;
+}
+
+.pull {
+  padding-top: 6px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: var(--track);
+}
+
+/* No minimum width: at narrow widths the cells wrap instead of the table
+   scrolling sideways. */
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.compare thead th {
+  padding: 0 16px 12px 0;
+  border-bottom: 2px solid var(--ink);
+  color: var(--slate);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.compare thead td {
+  border-bottom: 2px solid var(--ink);
+}
+
+.compare thead .compare__ours {
+  color: var(--ink);
+}
+
+.compare tbody th {
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare tbody td {
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.compare__theirs {
+  color: var(--slate);
+}
+
+/* How it works */
+
+.steps {
+  flex: 2 1 560px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.step__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.step__line {
+  flex: 1;
+  width: 1.5px;
+  background: var(--ink);
+}
+
+.step__body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  padding: 5px 0 28px;
+}
+
+.step__body--last {
+  padding-bottom: 0;
+}
+
+.step__name {
+  flex: 0 0 150px;
+  font-size: 23px;
+}
+
+.step__text {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text);
+  font-size: 17px;
+}
+
+/* Same standard */
+
+/* Source order is the reading order at every width: the two paths, then the
+   join, then the assessment. Nothing is placed or reordered by CSS. */
+.mirror {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.mirror__paths {
+  flex: 2.25 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mirror__path {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1.25fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.mirror__position {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  border: 1.5px solid var(--ink);
+}
+
+.mirror__label {
+  color: var(--slate);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.mirror__claim {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.mirror__arrow {
+  font-size: 24px;
+  text-align: center;
+}
+
+.mirror__arrow--down {
+  display: none;
+}
+
+.mirror__method {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 20px;
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.mirror__method-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.mirror__method-list {
+  color: var(--on-ink-muted);
+  font-family: var(--font-ui);
+  font-size: 13px;
+}
+
+.mirror__join {
+  flex: 0 0 40px;
+  align-self: stretch;
+  display: block;
+  width: 40px;
+  height: auto;
+}
+
+.mirror__assess {
+  flex: 1.2 1 0;
+  min-width: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 24px;
+  border: 2px solid var(--ink);
+  background: var(--card);
+}
+
+.mirror__assess-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: var(--track);
+}
+
+.mirror__note {
+  color: var(--slate);
+  font-size: 15px;
+}
+
+@media (max-width: 860px) {
+  .mirror {
+    flex-direction: column;
+  }
+
+  .mirror__path {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mirror__path .mirror__arrow {
+    transform: rotate(90deg);
+    justify-self: center;
+  }
+
+  .mirror__join {
+    display: none;
+  }
+
+  .mirror__arrow--down {
+    display: block;
+  }
+
+  .mirror__assess {
+    align-self: stretch;
+  }
+}
+
+/* Research principles */
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 36px 48px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.principles li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
+}
+
+.principles__word {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: var(--track);
+  line-height: 1.2;
+}
+
+.principles__over {
+  color: var(--slate);
+  font-size: 21px;
+  font-style: italic;
+}
+
+/* What this project is not */
+
+.concerns {
+  flex: 2 1 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+.concerns > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 32px;
+  padding: 20px 0;
+  border-top: 1px solid var(--ink);
+}
+
+.concerns > div:last-child {
+  border-bottom: 1px solid var(--ink);
+}
+
+.concerns dt {
+  flex: 1 1 260px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.concerns dd {
+  flex: 1 1 260px;
+  color: var(--text);
+  font-size: 17px;
+}
+
+/* Current research */
+
+.status-key {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.status-key li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-key .status {
+  flex: 0 0 116px;
+  text-align: center;
+}
+
+.status {
+  align-self: flex-start;
+  padding: 3px 8px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.status--researching {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.status--planned {
+  border-style: dashed;
+  border-color: var(--slate);
+  color: var(--slate);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--ink);
+  background: var(--card);
+}
+
+.card--planned {
+  border-style: dashed;
+  border-color: var(--slate);
+  background: transparent;
+}
+
+.card__title {
+  font-size: 25px;
+}
+
+.card__text {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* Get involved */
+
+.involve {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 48px 72px;
+}
+
+.involve__path {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.involve__path .small-copy {
+  max-width: 30em;
+}
+
+/* ── Forms ────────────────────────────────────────────────────────────── */
+
+.field-label {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.field-optional {
+  color: var(--slate);
+  font-weight: 500;
+}
+
+.input {
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
+  background: var(--card);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+}
+
+.input--area {
+  min-height: 180px;
+  padding: 12px 16px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 480px;
+}
+
+.signup__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.signup__row .input {
+  flex: 1 1 220px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 560px;
+  padding-block: 8px var(--section-pad);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Inner pages ──────────────────────────────────────────────────────── */
+
+.page-header__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: clamp(48px, 7vw, 96px) 48px;
+}
+
+.page-header--short .page-header__inner {
+  padding-bottom: var(--section-pad);
+}
+
+.page-title {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+}
+
+.prose {
+  max-width: 40em;
+  padding-bottom: var(--section-pad);
+}
+
+.prose h2 {
+  margin: 2em 0 0.6em;
+  font-size: clamp(28px, 3vw, 34px);
+  line-height: 1.15;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose p + p,
+.prose ul + p,
+.prose p + ul {
+  margin-top: 1em;
+}
+
+.prose ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.prose li + li {
+  margin-top: 0.5em;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────── */
+
+.site-footer {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: 48px 56px;
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wordmark--inverse {
+  color: var(--on-ink);
+}
+
+.site-footer__tagline {
+  color: var(--on-ink-muted);
+  font-size: 17px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.site-footer a {
+  color: var(--on-ink);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--on-ink);
+}
+
+/* currentColor is the link's own text colour, which by construction
+   contrasts with the dark footer it sits on. */
+.site-footer :focus-visible {
+  outline-color: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
