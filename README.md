@@ -58,10 +58,12 @@ site makes no third-party requests.
 
 ## Before launch
 
-Run `npm run check:launch` with `URL` set to the production address. It fails
-until these are done:
+Run `npm run check:launch` with `URL` set to the production address
+(`https://misinfotrace.org`). It fails on any bracketed placeholder left on a
+page and on canonical URLs that still point at localhost.
 
-- Replace `[OPERATOR NAME]` on the privacy page, and have the privacy page
-  reviewed.
+Two decisions no check can make for you:
+
+- Have the privacy page reviewed.
 - Decide where the `updates` signups go. Netlify Forms stores the addresses; a
   mailing-list tool is needed to actually send updates.
