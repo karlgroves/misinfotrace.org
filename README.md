@@ -11,7 +11,10 @@ of this first release.
 
 ## Requirements
 
-- Node per [.nvmrc](.nvmrc) (22), npm 11 or later
+- Node per [.nvmrc](.nvmrc) (24; `@afixt/a11y-assert` needs 24.15 or later),
+  npm 11 or later
+- Access to the private `@afixt` packages on npm (`npm login`), for the
+  browser tests
 - Chromium for Playwright, for the browser tests: `npx playwright install chromium`
 
 ## Commands
@@ -46,7 +49,10 @@ site makes no third-party requests.
 
 1. Create a Netlify site from this repository. `netlify.toml` sets the build
    command (`npm run build`) and publish directory (`_site`); Netlify reads the
-   Node version from `.nvmrc`.
+   Node version from `.nvmrc`. It also sets `NPM_FLAGS=--omit=dev`, so Netlify
+   installs only `dependencies`: the build needs nothing else, and the private
+   `@afixt` test packages would fail to download there. Keep anything the
+   build needs in `dependencies`.
 2. Turn on **form detection** (Site configuration → Forms). The site has two
    forms: `updates` (email signup) and `contact`. Set up notifications for both
    so submissions reach someone.
@@ -58,10 +64,12 @@ site makes no third-party requests.
 
 ## Before launch
 
-Run `npm run check:launch` with `URL` set to the production address. It fails
-until these are done:
+Run `npm run check:launch` with `URL` set to the production address
+(`https://misinfotrace.org`). It fails on any bracketed placeholder left on a
+page and on canonical URLs that still point at localhost.
 
-- Replace `[OPERATOR NAME]` on the privacy page, and have the privacy page
-  reviewed.
+Two decisions no check can make for you:
+
+- Have the privacy page reviewed.
 - Decide where the `updates` signups go. Netlify Forms stores the addresses; a
   mailing-list tool is needed to actually send updates.

@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "type": "module",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.15.0"
   },
   "scripts": {
     "clean": "node -e \"import('node:fs').then((fs) => fs.rmSync('_site', { recursive: true, force: true }))\"",
@@ -24,11 +24,13 @@
     "og": "node scripts/og-image.mjs",
     "check": "npm run lint:md && npm run check:contrast && npm run test:e2e && npm run check:site"
   },
-  "devDependencies": {
+  "dependencies": {
     "@11ty/eleventy": "3.1.6",
-    "@afixt/a11y-assert": "3.0.0",
     "@fontsource/newsreader": "5.3.0",
-    "@fontsource/public-sans": "5.3.0",
+    "@fontsource/public-sans": "5.3.0"
+  },
+  "devDependencies": {
+    "@afixt/a11y-assert": "3.0.0",
     "@playwright/test": "1.62.1",
     "markdownlint-cli2": "0.23.2"
   },

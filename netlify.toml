@@ -6,3 +6,9 @@
 [build]
   command = "npm run build"
   publish = "_site"
+
+# The build needs only the packages in `dependencies` (Eleventy and the
+# fonts). The test tooling in `devDependencies` includes private @afixt
+# packages that Netlify cannot download, so it is never installed here.
+[build.environment]
+  NPM_FLAGS = "--omit=dev"
