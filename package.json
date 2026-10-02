@@ -19,10 +19,11 @@
     "check:contrast": "node scripts/check-contrast.mjs",
     "check:site": "node scripts/check-site.mjs",
     "check:launch": "node scripts/check-site.mjs --launch",
+    "check:netlify": "node scripts/check-netlify.mjs",
     "pretest:e2e": "npm run build",
     "test:e2e": "playwright test",
     "og": "node scripts/og-image.mjs",
-    "check": "npm run lint:md && npm run check:contrast && npm run test:e2e && npm run check:site"
+    "check": "npm run lint:md && npm run check:contrast && npm run test:e2e && npm run check:site && npm run check:netlify"
   },
   "dependencies": {
     "@11ty/eleventy": "3.1.6",

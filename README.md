@@ -27,6 +27,7 @@ of this first release.
 | `npm run check:contrast` | Check every colour pair in the stylesheet against WCAG 2.2 AA    |
 | `npm run check:site`     | Check the build: links, anchors, metadata, forms, CSP compliance |
 | `npm run test:e2e`       | Build, then run the accessibility and navigation browser tests   |
+| `npm run check:netlify`  | Install and build as Netlify does: `dependencies` only, no login |
 | `npm run check`          | Everything above plus Markdown lint — the bar for any change     |
 | `npm run check:launch`   | `check:site`, also failing on placeholders and localhost URLs    |
 | `npm run og`             | Regenerate the social card and Apple touch icon PNGs             |
