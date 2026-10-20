@@ -213,7 +213,7 @@ The MVP should work completely without animation or advanced JavaScript.
 
 The following should not be required to launch the landing page:
 
-- donations and fundraising;
+- payment processing and donate buttons (donation inquiries go through the Support page — see [specs/support-page.md](specs/support-page.md));
 - live misinformation monitoring;
 - automated claim detection;
 - automated fact checking;
