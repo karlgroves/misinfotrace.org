@@ -36,6 +36,7 @@
     "markdownlint-cli2": "0.23.3"
   },
   "overrides": {
+    "puppeteer": "^25.14.0",
     "smol-toml": "^1.8.0"
   }
 }
