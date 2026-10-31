@@ -1,7 +1,17 @@
 import { playwrightAdapter } from '@afixt/a11y-assert';
 import { expect, test } from '@playwright/test';
 
-const PAGES = ['/', '/methodology/', '/privacy/', '/contact/', '/subscribed/', '/thanks/', '/404.html'];
+const PAGES = [
+  '/',
+  '/methodology/',
+  '/privacy/',
+  '/contact/',
+  '/support/',
+  '/support/thanks/',
+  '/subscribed/',
+  '/thanks/',
+  '/404.html',
+];
 
 /**
  * Rules skipped on specific pages, each with its reason.
