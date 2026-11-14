@@ -1,0 +1,113 @@
+---
+layout: layouts/base.njk
+permalink: /support/
+title: Support
+description: What Misinfo Trace costs to run, where support goes, and how to get in touch about donating. Misinfo Trace is not yet a 501(c)(3), and donations are not tax-deductible.
+---
+<header class="page-header">
+  <div class="container page-header__inner">
+    <p class="eyebrow">Support</p>
+    <h1 class="page-title">Help keep the research running.</h1>
+    <p class="lede">Misinfo Trace runs on volunteered time and a small infrastructure budget. If you'd like to help cover it, get in touch — we'll talk it through with you before any money changes hands.</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="prose">
+    <h2 id="standing">Where the project stands</h2>
+    <p class="disclosure">Misinfo Trace is an independent research project. It is <strong>not yet a registered nonprofit</strong> and <strong>not a 501(c)(3) organization</strong>, so donations are <strong>not tax-deductible</strong>.</p>
+    <p>Until a nonprofit exists, support is received by [RECIPIENT LEGAL NAME] on the project's behalf.</p>
+
+    <h2 id="costs">What it costs</h2>
+    <p>The project collects public posts and articles around the clock, keeps a daily backup of everything it collects, and uses an AI model to classify the claims it finds. These are its running costs.</p>
+    <table class="compare costs">
+      <caption>Actual spending for [MONTH YEAR].</caption>
+      <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Monthly cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Collection server and storage (DigitalOcean)</th>
+          <td>[SERVER COST]</td>
+        </tr>
+        <tr>
+          <th scope="row">Off-server backups (DigitalOcean Spaces)</th>
+          <td>[BACKUP COST]</td>
+        </tr>
+        <tr>
+          <th scope="row">AI model usage for classifying claims</th>
+          <td>[MODEL COST] <span class="costs__note">(varies with volume)</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Website hosting and domain</th>
+          <td>[WEBSITE COST]</td>
+        </tr>
+        <tr class="costs__total">
+          <th scope="row">Total</th>
+          <td>[MONTHLY TOTAL]</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="goals">What more funding would do</h2>
+    <ol>
+      <li><strong>Keep the lights on.</strong> Cover running costs for [MONTHS] months: [RUNNING COSTS GOAL].</li>
+      <li><strong>Run the early-warning test in full.</strong> The model usage and storage the prospective test phase needs: [TEST PHASE GOAL].</li>
+      <li><strong>Form the nonprofit.</strong> Legal and filing costs to incorporate and apply for 501(c)(3) status: [NONPROFIT FORMATION GOAL].</li>
+    </ol>
+
+    <h2 id="spending">Where the money goes: no salaries, yet</h2>
+    <p>Every dollar goes to operations and infrastructure — servers, storage, backups, AI model usage, the website, and [OTHER OPERATING COSTS]. <strong>None of it goes to salaries.</strong> No one working on Misinfo Trace is paid.</p>
+    <p>If that changes, this page will say so before we accept money on the new basis.</p>
+    <p>We publish a summary of what we spend every [REPORTING PERIOD].</p>
+
+    <h2 id="nonprofit">Becoming a 501(c)(3)</h2>
+    <p>We intend to form a nonprofit and apply for 501(c)(3) status once the current research phase shows the approach works. We have not applied yet, and we can't promise when — or whether — that status will be granted.</p>
+    <p>Money given before the nonprofit exists is not tax-deductible, and it won't become deductible if the nonprofit is approved later.</p>
+
+    <h2 id="independence">Support doesn't buy influence</h2>
+    <p>Funders have no say in what we study, how we assess claims, or what we publish, and the same methodology applies no matter who funds the work.</p>
+    <p>[FUNDING ACCEPTANCE POLICY]</p>
+    <p>[FUNDER DISCLOSURE POLICY]</p>
+
+    <h2 id="get-in-touch">Tell us about the support you have in mind</h2>
+    <form class="form" name="support" method="POST" action="/support/thanks/" data-netlify="true" netlify-honeypot="company">
+      <input type="hidden" name="form-name" value="support">
+      <p hidden><label for="support-company">Leave this field empty</label><input id="support-company" name="company" tabindex="-1" autocomplete="off"></p>
+      <div class="field">
+        <label class="field-label" for="support-name">Name</label>
+        <input class="input" id="support-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label class="field-label" for="support-email">Email address</label>
+        <input class="input" id="support-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label class="field-label" for="support-organization">Organization <span class="field-optional">(optional)</span></label>
+        <input class="input" id="support-organization" name="organization" type="text" autocomplete="organization">
+      </div>
+      <fieldset class="field choice">
+        <legend class="field-label">Kind of support</legend>
+        <div class="choice__option"><input id="support-kind-personal" name="kind" type="radio" value="A personal donation" required><label for="support-kind-personal">A personal donation</label></div>
+        <div class="choice__option"><input id="support-kind-organization" name="kind" type="radio" value="Funding from an organization or foundation"><label for="support-kind-organization">Funding from an organization or foundation</label></div>
+        <div class="choice__option"><input id="support-kind-in-kind" name="kind" type="radio" value="Donated infrastructure or services"><label for="support-kind-in-kind">Donated infrastructure or services</label></div>
+        <div class="choice__option"><input id="support-kind-other" name="kind" type="radio" value="Something else"><label for="support-kind-other">Something else</label></div>
+      </fieldset>
+      <div class="field">
+        <label class="field-label" for="support-message">Message</label>
+        <textarea class="input input--area" id="support-message" name="message" rows="6" required></textarea>
+      </div>
+      <div class="actions">
+        <button class="button" type="submit">Send</button>
+      </div>
+      <div class="form-notes">
+        <p class="small-copy">Donations are not tax-deductible. See <a href="#standing">where the project stands</a>.</p>
+        <p class="small-copy">We'll only ever send payment details from [OFFICIAL EMAIL ADDRESS]. If anyone else asks you to pay on our behalf, don't.</p>
+        <p class="small-copy">We use what you send only to reply. See our <a href="/privacy/">privacy page</a>.</p>
+      </div>
+    </form>
+  </div>
+</div>
